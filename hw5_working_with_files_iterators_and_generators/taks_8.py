@@ -1,24 +1,39 @@
-class A:
-	def __init__(self, filename):
-		self.filename = filename
-		self.fileopen = None
+import json
 
-	def write1(self, text):
-		self.fileopen.write(text + '\n')
+
+class Configuration:
+
+	json_data = None
+
+	def __init__(self, filename, mode):
+		self.filename = filename
+		self.mode = mode
+		self.file = None
 
 	def __enter__(self):
-		print("__enter__")
-		self.fileopen = open(self.filename, 'w')
-		return self
+		self.file = open(self.filename, self.mode)
+
+		if self.mode == 'r':
+			Configuration.json_data = json.load(self.file)
+			print(f'Reading file... \n{Configuration.json_data}')
+
+		return self.file
 
 	def __exit__(self, exc_type, exc_val, exc_tb):
-		print("__exit__")
-		self.fileopen.close()
+		self.file.close()
+
+
+with Configuration('json_files_task8/config.json', 'r') as fr:
+	Configuration.json_data["a"] = 30
+	Configuration.json_data["b"] = 40
+	Configuration.json_data["c"] = 50
+
+
+with Configuration('json_files_task8/config.json', 'w') as fw:
+	json.dump(Configuration.json_data, fw)
 
 
 
-with A('text1') as fw:
-	print("Main")
-	fw.write1('asd')
+
 
 
