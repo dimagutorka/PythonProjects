@@ -21,7 +21,6 @@ print(a_product.get_price())  # get and disp lay the new price -> 500
 a_product.set_price(-200)  # set a negative price
 
 
-
 class ProductWithProperty:
 
 	def __init__(self, name: str, price: float):
@@ -50,6 +49,3 @@ b_product.price = -100  # set a negative price
 
 class ProductWithDescriptor:
 	pass
-
-
-#https://www.youtube.com/watch?v=ACqsYPbgePk&ab_channel=selfedu

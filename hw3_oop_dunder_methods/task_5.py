@@ -1,6 +1,5 @@
 class A:
 
-
     def __init__(self, list_obj):
         self.list_obj = list_obj
         self.list_sum = 0
@@ -46,6 +45,7 @@ print(a.get_list_min(a.list_obj))
 
 print(a.list_min)
 print(a.list_sum)
+
 
 
 

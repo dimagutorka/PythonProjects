@@ -31,14 +31,14 @@ vector_b = Vector(20, 10)
 print(vector_a.x + vector_b.x)
 print(vector_a.x - vector_b.x)
 print(vector_a.x * vector_b.x)
-print(vector_a.x == vector_b.x) #Comparition of the lenghts of two vectors
+print(vector_a.x == vector_b.x)  # Comparison of the lengths of two vectors
 
 print("\t")
 
 print(vector_a.y + vector_b.y)
 print(vector_a.y - vector_b.y)
 print(vector_a.y * vector_b.y)
-print(vector_a.y == vector_b.y) #Comparition of the lenghts of two vectors
+print(vector_a.y == vector_b.y)  # Comparison of the lengths of two vectors
 
 
 
