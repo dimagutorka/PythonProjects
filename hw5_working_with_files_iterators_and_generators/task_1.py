@@ -31,7 +31,7 @@ class A:
 
 a = A()
 
-f = open("/Users/cblpok/Documents/GitHub/PythonProjects/test", 'r')
+f = open("/hw5_working_with_files_iterators_and_generators/test", 'r')
 a.my_list = f.readlines()
 
 for i in iter(a):
