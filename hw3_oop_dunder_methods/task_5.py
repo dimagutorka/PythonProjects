@@ -1,51 +1,69 @@
+from typing import List, Any
+
+
 class A:
+	"""A class to handle a list of numbers, providing methods to calculate sum and minimum."""
 
-    def __init__(self, list_obj):
-        self.list_obj = list_obj
-        self.list_sum = 0
-        self.list_min = 0
+	def __init__(self, list_obj: List[float]) -> None:
+		"""Initializes the class with a list of numbers.
 
-    def __len__(self, arg1):
-        return len(arg1)
+		Args:
+			list_obj (List[float]): The list of numbers to operate on.
+		"""
+		self.list_obj = list_obj
+		self.list_sum = 0
+		self.list_min = float('inf')  # Initialize to infinity for finding the minimum
 
-    def __iter__(self):
-        self.n = 0  # we need this so we could iterate our object several time but not only once
-        return self
+	def __len__(self) -> int:
+		"""Returns the length of the list."""
+		return len(self.list_obj)
 
-    def __next__(self,arg1):
-        if 0 <= self.n < len(self.list_obj):
-            result = arg1[self.n]
-            self.n += 1
-            return result
-        else:
-            raise StopIteration
+	def __iter__(self):
+		"""Returns the iterator object (self) for the list."""
+		self.n = 0
+		return self
 
-    def __getitem__(self, item, arg1):
-        return arg1[item]
+	def __next__(self) -> Any:
+		"""Returns the next item from the list.
 
-    def get_list_sum(self, arg1):
-        i = iter(arg1)
-        for j in i:
-            self.list_sum += j
+		Raises:
+			StopIteration: When there are no more items to iterate.
+		"""
+		if 0 <= self.n < len(self.list_obj):
+			result = self.list_obj[self.n]
+			self.n += 1
+			return result
+		else:
+			raise StopIteration
 
-    def get_list_min(self, arg1):
-        i = iter(arg1)
-        self.list_min = arg1[0]  # temporary minimal variable
-        for j in i:
-            if j < self.list_min:
-                self.list_min = j
+	def get_list_sum(self) -> float:
+		"""Calculates the sum of the numbers in the list.
+
+		Returns:
+			float: The sum of the list elements.
+		"""
+		self.list_sum = sum(self.list_obj)  # Use built-in sum function
+		return self.list_sum
+
+	def get_list_min(self) -> float:
+		"""Finds the minimum number in the list.
+
+		Returns:
+			float: The minimum value in the list.
+		"""
+		if not self.list_obj:
+			raise ValueError("List is empty, cannot determine minimum.")
+
+		self.list_min = min(self.list_obj)  # Use built-in min function
+		return self.list_min
 
 
-# Create an instance of A
-
+# Example usage
 a = A([10, 52, 2, 3, 4, 5])
 
-print(a.get_list_sum(a.list_obj))
-print(a.get_list_min(a.list_obj))
+# Calculate the sum and minimum
+sum_result = a.get_list_sum()
+min_result = a.get_list_min()
 
-print(a.list_min)
-print(a.list_sum)
-
-
-
-
+print(f"Sum: {sum_result}")  # Output: Sum: 76
+print(f"Minimum: {min_result}")  # Output: Minimum: 2

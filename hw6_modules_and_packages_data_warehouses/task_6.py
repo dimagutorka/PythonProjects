@@ -63,8 +63,3 @@ with CsvToJson('data_warehouses/taks_6_from_json_to_csv.csv', 'w') as fw:
 	writer.writeheader()
 	writer.writerows(CsvToJson.json_data_from_csv)
 
-
-
-
-
-

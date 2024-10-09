@@ -1,64 +1,92 @@
 import re
 
-
 class User:
+    """A class to represent a user with first name, last name, and email address."""
 
-	regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+    regex: str = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
 
-	def __init__(self, first_name, last_name, email):
-		self.__first_name = first_name
-		self.__last_name = last_name
-		self.__email = email
+    def __init__(self, first_name: str, last_name: str, email: str) -> None:
+        """Initializes the User with first name, last name, and email.
 
-	@property
-	def first_name(self):
-		return self.__first_name
+        Args:
+            first_name (str): The first name of the user.
+            last_name (str): The last name of the user.
+            email (str): The email address of the user.
+        """
+        self.__first_name = first_name
+        self.__last_name = last_name
+        self.__email = email
 
-	@first_name.setter
-	def first_name(self, value):
-		self.__first_name = value
+    @property
+    def first_name(self) -> str:
+        """First name property."""
+        return self.__first_name
 
-	@property
-	def last_name(self):
-		return self.__last_name
+    @first_name.setter
+    def first_name(self, value: str) -> None:
+        """Sets the first name of the user.
 
-	@last_name.setter
-	def last_name(self, value):
-		self.__last_name = value
+        Args:
+            value (str): The first name to set.
+        """
+        self.__first_name = value
 
-	@property
-	def email(self):
-		return self.__email
+    @property
+    def last_name(self) -> str:
+        """Last name property."""
+        return self.__last_name
 
-	@email.setter
-	def email(self, value):
-		self.__email = value
+    @last_name.setter
+    def last_name(self, value: str) -> None:
+        """Sets the last name of the user.
 
-	def email_validator(self):
-		# pass the regular expression
-		# and the string into the fullmatch() method
-		if re.fullmatch(User.regex, self.__email):
-			print("Valid Email")
+        Args:
+            value (str): The last name to set.
+        """
+        self.__last_name = value
 
-		else:
-			print("Invalid Email")
+    @property
+    def email(self) -> str:
+        """Email property."""
+        return self.__email
 
+    @email.setter
+    def email(self, value: str) -> None:
+        """Sets the email address of the user.
 
+        Args:
+            value (str): The email address to set.
+        """
+        self.__email = value
+
+    def email_validator(self) -> None:
+        """Validates the user's email address against the defined regex pattern.
+
+        Prints whether the email is valid or invalid.
+        """
+        if re.fullmatch(User.regex, self.__email):
+            print("Valid Email")
+        else:
+            print("Invalid Email")
+
+# Example usage
 a = User("Ivan", "Franko", "Ivan_Franko@gmail.com")
 
+# Print initial values
 print(a.first_name)
 print(a.last_name)
 print(a.email)
 
-# Set new value to our object
+# Change values
 a.first_name = "Taras"
 a.last_name = "Bulba"
 a.email = "Taras_Bulba@gmail.com"
 
+# Print updated values
 print(" \nValues after changes: \n")
 print(a.first_name)
 print(a.last_name)
 print(a.email)
 
-a.email_validator()  # check weather or email is valid or not
-
+# Validate email
+a.email_validator()
