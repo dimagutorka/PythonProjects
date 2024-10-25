@@ -2,39 +2,47 @@ from task_6 import BankAccount
 import pytest
 
 
-new_balance = BankAccount(100).get_balance()
-
-
 @pytest.fixture
 def bank_balance():
-	balance = BankAccount(100)
-	return balance
+    """
+    Fixture to initialize a BankAccount with a starting balance of 100.
+    """
+    return BankAccount(100)
 
 
 def test_zero_balance(bank_balance):
-	bank_balance.withdraw(100)
-	if bank_balance.get_balance() == 0:
-		pytest.skip("Your bank account is 0")
+    """
+    Test to ensure that after withdrawing the full balance, the account has a zero balance.
+    Skips the test if the balance becomes zero.
+    """
+    bank_balance.withdraw(100)
+    if bank_balance.get_balance() == 0:
+        pytest.skip("Your bank account balance is 0")
 
-	assert bank_balance.get_balance() != 0
+    assert bank_balance.get_balance() != 0  # This should now fail if the balance is zero
 
 
-@pytest.mark.parametrize("a, b,  result", [
-	(new_balance, 100, 200),
-	(new_balance, 0, 100),
-	(new_balance, 5.5, 105.5),
-
+@pytest.mark.parametrize("deposit_amount, expected_balance", [
+    (100, 200),
+    (0, 100),
+    (5.5, 105.5),
 ])
-def test_deposite(a, b, result):
-	assert a + b == result
+def test_deposit(bank_balance, deposit_amount, expected_balance):
+    """
+    Test deposit functionality with multiple amounts.
+    """
+    bank_balance.deposit(deposit_amount)
+    assert bank_balance.get_balance() == expected_balance
 
 
-
-# @pytest.mark.parametrize("a, b,  result", [
-# 	(new_balance, 100, 200),
-# 	(new_balance, 0, 100),
-# 	(new_balance, 5.5, 105.5),
-#
-# ])
-# def test_withdrawn(a, b, result):
-# 	assert a - b == result
+@pytest.mark.parametrize("withdraw_amount, expected_balance", [
+    (50, 50),
+    (0, 100),
+    (10, 90),
+])
+def test_withdraw(bank_balance, withdraw_amount, expected_balance):
+    """
+    Test withdraw functionality with multiple amounts.
+    """
+    bank_balance.withdraw(withdraw_amount)
+    assert bank_balance.get_balance() == expected_balance

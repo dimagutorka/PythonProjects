@@ -1,63 +1,81 @@
 import unittest
-from task_1_functions import *
+from task_1_functions import StringProcessor
 
 
 class TestString(unittest.TestCase):
 
-	def setUp(self) -> None:
-		self.class_object = StringProcessor('qqqq')
-		self.reversed_string = self.class_object.reverse_string()
-		self.capitalized_string = self.class_object.capitalize_string()
-		self.vowel_in_str = self.class_object.string
+    def setUp(self) -> None:
+        """
+        Set up the test fixture for each test.
+        Initializes the StringProcessor with 'qqqq' and precomputes
+        reversed, capitalized, and original strings for testing.
+        """
+        self.class_object = StringProcessor('qqqq')
+        self.reversed_string = self.class_object.reverse_string()
+        self.capitalized_string = self.class_object.capitalize_string()
+        self.original_string = self.class_object.string
 
-	@unittest.skip('Not finished yet')
-	def test_reversed_str_empty(self):
-		self.assertNotEqual(self.reversed_string, '')
+    @unittest.skip('Not finished yet')
+    def test_reversed_str_not_empty(self):
+        """
+        Test that the reversed string is not empty.
+        """
+        self.assertNotEqual(self.reversed_string, '')
 
-	def test_reversed_str_one_register(self):
-		only_one_register = True
-		if not self.reversed_string.islower() and not self.reversed_string.isupper():
-			only_one_register = False
-		self.assertEqual(only_one_register, True, 'Your string should be in only one register')
+    def test_reversed_str_single_case(self):
+        """
+        Test that the reversed string is entirely in one case (all uppercase or all lowercase).
+        """
+        single_case = self.reversed_string.islower() or self.reversed_string.isupper()
+        self.assertTrue(single_case, 'The reversed string should be entirely in one case.')
 
-	def test_reversed_no_symbl_digit(self):
-		is_any_digit_ot_symbol = False
-		if not self.reversed_string.isalnum() or self.reversed_string.isdigit():
-			is_any_digit_ot_symbol = True
-		self.assertEqual(is_any_digit_ot_symbol, False, 'Your string cannot contain any digits or symbols')
+    def test_reversed_no_symbols_or_digits(self):
+        """
+        Test that the reversed string does not contain any symbols or digits.
+        """
+        contains_invalid_chars = not self.reversed_string.isalpha()
+        self.assertFalse(contains_invalid_chars, 'The reversed string should not contain symbols or digits.')
 
-	def test_capitalized_str_empty(self):
-		self.assertNotEqual(self.capitalized_string, '')
+    def test_capitalized_str_not_empty(self):
+        """
+        Test that the capitalized string is not empty.
+        """
+        self.assertNotEqual(self.capitalized_string, '')
 
-	def test_capitalized_str_one_register(self):
-		only_one_register = True
+    def test_capitalized_str_single_case(self):
+        """
+        Test that the capitalized string has only the first letter capitalized.
+        """
+        single_case = self.capitalized_string.islower() or self.capitalized_string.isupper()
+        self.assertFalse(single_case, 'The capitalized string should not be in one register (it should be title case).')
 
-		if not self.capitalized_string.islower() and not self.capitalized_string.isupper():
-			only_one_register = False
-		self.assertNotEqual(only_one_register, True, 'Your string should be in only one register')
+    def test_capitalized_no_symbols_or_digits(self):
+        """
+        Test that the capitalized string does not contain symbols or digits.
+        """
+        contains_invalid_chars = not self.capitalized_string.isalpha()
+        self.assertFalse(contains_invalid_chars, 'The capitalized string should not contain symbols or digits.')
 
-	def test_capitalized_no_symbl_digit(self):
-		is_any_digit_ot_symbol = False
-		if not self.capitalized_string.isalnum() or self.capitalized_string.isdigit():
-			is_any_digit_ot_symbol = True
-		self.assertEqual(is_any_digit_ot_symbol, False, 'Your string cannot contain any digits or symbols')
+    def test_original_str_not_empty(self):
+        """
+        Test that the original string is not empty.
+        """
+        self.assertNotEqual(self.original_string, '')
 
-	def test_count_vowel_str_empty(self):
-		self.assertNotEqual(self.vowel_in_str, '')
+    def test_original_str_single_case(self):
+        """
+        Test that the original string is entirely in one case (either all lowercase or all uppercase).
+        """
+        single_case = self.original_string.islower() or self.original_string.isupper()
+        self.assertTrue(single_case, 'The original string should be entirely in one case.')
 
-	def test_count_vowel_one_register(self):
-		only_one_register = True
-		if not self.vowel_in_str.islower() and not self.vowel_in_str.isupper():
-			only_one_register = False
-		self.assertEqual(only_one_register, True, 'Your string should be in only one register')
-
-	def test_count_vowel_symbl_digit(self):
-		is_any_digit_ot_symbol = False
-		if not self.vowel_in_str.isalpha() and self.vowel_in_str.isdigit():
-			is_any_digit_ot_symbol = True
-		self.assertEqual(is_any_digit_ot_symbol, False, 'Your string cannot contain any digits or symbols')
+    def test_original_no_symbols_or_digits(self):
+        """
+        Test that the original string does not contain symbols or digits.
+        """
+        contains_invalid_chars = not self.original_string.isalpha()
+        self.assertFalse(contains_invalid_chars, 'The original string should not contain symbols or digits.')
 
 
 if __name__ == '__main__':
-	unittest.main()
-
+    unittest.main()
