@@ -4,30 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c38e20a-300f-4346-a53b-95ed5792a72f" name="Changes" comment="Commit_HW_8">
-      <change afterPath="$PROJECT_DIR$/draft.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/big_files/HPC 2k.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/big_files/HealthApp 1k log.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/big_files/HealthApp 2k log.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/images_urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/taks_6.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_7.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw11_async_io/task_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw9_no_sql_databases/data_for_collections/data_for_orders_collection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw9_no_sql_databases/data_for_collections/data_for_products_collection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw9_no_sql_databases/sensetive_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw9_no_sql_databases/task_2_redis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw9_no_sql_databases/task_3_cassandra.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8c38e20a-300f-4346-a53b-95ed5792a72f" name="Changes" comment="Commit_HW_10">
+      <change afterPath="$PROJECT_DIR$/hw11_async_io/taks_4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11_async_io/task_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11_async_io/task_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11_async_io/task_5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11_async_io/task_6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11_async_io/task_7.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw8_databases_sql_lite/db_creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8_databases_sql_lite/db_creation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw8_databases_sql_lite/insert_movies_and_actors.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8_databases_sql_lite/insert_movies_and_actors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw8_databases_sql_lite/selections_from_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8_databases_sql_lite/selections_from_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw11_async_io/task_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw11_async_io/task_1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,55 +69,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.pytest in test_draft.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Cassandra.executor&quot;: &quot;Run&quot;,
-    &quot;Python.actors.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_for_products_collection.executor&quot;: &quot;Run&quot;,
-    &quot;Python.db_creation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.draft.executor&quot;: &quot;Run&quot;,
-    &quot;Python.draft1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.hw_db_red.executor&quot;: &quot;Run&quot;,
-    &quot;Python.insert_movies_and_actors.executor&quot;: &quot;Run&quot;,
-    &quot;Python.movie_cast.executor&quot;: &quot;Run&quot;,
-    &quot;Python.movies.executor&quot;: &quot;Run&quot;,
-    &quot;Python.movies_cast.executor&quot;: &quot;Run&quot;,
-    &quot;Python.qqqq.executor&quot;: &quot;Run&quot;,
-    &quot;Python.quick_start.executor&quot;: &quot;Run&quot;,
-    &quot;Python.redis.executor&quot;: &quot;Run&quot;,
-    &quot;Python.selections_from_db.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_3_cassandra.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_5.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_7.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tttt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/cblpok/Documents/GitHub/PythonProjects/hw10_multithreading_vs_multiprocessing/big_files&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.pytest in test_draft.py.executor": "Run",
+    "Python.Cassandra.executor": "Run",
+    "Python.actors.executor": "Run",
+    "Python.data_for_products_collection.executor": "Run",
+    "Python.db_creation.executor": "Run",
+    "Python.draft.executor": "Run",
+    "Python.draft1.executor": "Run",
+    "Python.hw_db_red.executor": "Run",
+    "Python.insert_movies_and_actors.executor": "Run",
+    "Python.movie_cast.executor": "Run",
+    "Python.movies.executor": "Run",
+    "Python.movies_cast.executor": "Run",
+    "Python.qqqq.executor": "Run",
+    "Python.quick_start.executor": "Run",
+    "Python.redis.executor": "Run",
+    "Python.selections_from_db.executor": "Run",
+    "Python.taks_4.executor": "Run",
+    "Python.task_1.executor": "Run",
+    "Python.task_2.executor": "Run",
+    "Python.task_3.executor": "Run",
+    "Python.task_3_cassandra.executor": "Run",
+    "Python.task_4.executor": "Run",
+    "Python.task_5.executor": "Run",
+    "Python.task_6.executor": "Run",
+    "Python.task_7.executor": "Run",
+    "Python.tttt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/cblpok/Documents/GitHub/PythonProjects/hw10_multithreading_vs_multiprocessing/big_files",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;GenericSQL&quot;,
-      &quot;SQLite&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "GenericSQL",
+      "SQLite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/big_files" />
@@ -144,7 +134,7 @@
       <recent name="$PROJECT_DIR$/hw5_working_with_files_iterators_and_generators/original_file_task9" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.draft">
+  <component name="RunManager" selected="Python.task_7">
     <configuration name="draft" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProjects" />
       <option name="ENV_FILES" value="" />
@@ -168,7 +158,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="task_3_cassandra" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="taks_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProjects" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,12 +167,35 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw9_no_sql_databases" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw11_async_io" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw9_no_sql_databases/task_3_cassandra.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw11_async_io/taks_4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="task_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProjects" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw11_async_io" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw11_async_io/task_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,29 +227,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="task_5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonProjects" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_5.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="task_7" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProjects" />
       <option name="ENV_FILES" value="" />
@@ -246,12 +236,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw11_async_io" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_7.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw11_async_io/task_7.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -262,11 +252,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.draft" />
-        <item itemvalue="Python.task_3_cassandra" />
-        <item itemvalue="Python.task_4" />
         <item itemvalue="Python.task_7" />
-        <item itemvalue="Python.task_5" />
+        <item itemvalue="Python.draft" />
+        <item itemvalue="Python.task_4" />
+        <item itemvalue="Python.taks_4" />
+        <item itemvalue="Python.task_2" />
       </list>
     </recent_temporary>
   </component>
@@ -334,7 +324,8 @@
       <workItem from="1729585444588" duration="15390000" />
       <workItem from="1729664727100" duration="20165000" />
       <workItem from="1729703167648" duration="26000" />
-      <workItem from="1729753369051" duration="2194000" />
+      <workItem from="1729753369051" duration="17510000" />
+      <workItem from="1729835463980" duration="18050000" />
     </task>
     <task id="LOCAL-00001" summary="HW2_IntermediateCommit">
       <created>1727015718924</created>
@@ -400,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728997999650</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Commit_HW_10">
+      <option name="closed" value="true" />
+      <created>1729759920199</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729759920199</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,14 +426,15 @@
     <MESSAGE value="HW5_Commit_part1" />
     <MESSAGE value="Commit_HW_7" />
     <MESSAGE value="Commit_HW_8" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit_HW_8" />
+    <MESSAGE value="Commit_HW_10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit_HW_10" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonProjects$math_utils.coverage" NAME="math_utils Coverage Results" MODIFIED="1728319977184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw6_modules_and_packages_data_warehouses/task_1" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_in_test_task6_pytests_py.coverage" NAME="pytest in test_task6_pytests.py Coverage Results" MODIFIED="1728663646004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$selections_from_db.coverage" NAME="selections_from_db Coverage Results" MODIFIED="1729086029200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw8_databases_sql_lite" />
     <SUITE FILE_PATH="coverage/PythonProjects$movies_cast.coverage" NAME="movies_cast Coverage Results" MODIFIED="1728902460510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw8_databases_sql_lite/db_movies_cast" />
-    <SUITE FILE_PATH="coverage/PythonProjects$task_3.coverage" NAME="task_3 Coverage Results" MODIFIED="1729682998635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
+    <SUITE FILE_PATH="coverage/PythonProjects$task_3.coverage" NAME="task_3 Coverage Results" MODIFIED="1729782275034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw11_async_io" />
     <SUITE FILE_PATH="coverage/PythonProjects$main.coverage" NAME="main Coverage Results" MODIFIED="1728320723720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw6_modules_and_packages_data_warehouses/task_1" />
     <SUITE FILE_PATH="coverage/PythonProjects$insert_movies_and_actors.coverage" NAME="insert_movies_and_actors Coverage Results" MODIFIED="1729012128787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw8_databases_sql_lite" />
     <SUITE FILE_PATH="coverage/PythonProjects$DRAFT.coverage" NAME="DRAFT Coverage Results" MODIFIED="1727696355946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -442,7 +442,7 @@
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_for_task_4_test1.coverage" NAME="pytest for task_4.test1 Coverage Results" MODIFIED="1728038975479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw5_working_with_files_iterators_and_generators" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_in_task_4_py.coverage" NAME="pytest in task_4.py Coverage Results" MODIFIED="1728038994262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw5_working_with_files_iterators_and_generators" />
     <SUITE FILE_PATH="coverage/PythonProjects$task_1_functions.coverage" NAME="task_1_functions Coverage Results" MODIFIED="1728546092494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
-    <SUITE FILE_PATH="coverage/PythonProjects$task_6.coverage" NAME="task_6 Coverage Results" MODIFIED="1728653594414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
+    <SUITE FILE_PATH="coverage/PythonProjects$task_6.coverage" NAME="task_6 Coverage Results" MODIFIED="1729844681797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw11_async_io" />
     <SUITE FILE_PATH="coverage/PythonProjects$HW2_CodeQualityLEGB.coverage" NAME="HW2_CodeQualityLEGB Coverage Results" MODIFIED="1727167134599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProjects$taks_5.coverage" NAME="taks_5 Coverage Results" MODIFIED="1727788801176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw4._oop_introspection_reflection " />
     <SUITE FILE_PATH="coverage/PythonProjects$movies.coverage" NAME="movies Coverage Results" MODIFIED="1728906817655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw8_databases_sql_lite" />
@@ -450,7 +450,7 @@
     <SUITE FILE_PATH="coverage/PythonProjects$data_for_products_collection.coverage" NAME="data_for_products_collection Coverage Results" MODIFIED="1729171367536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pymongo-quickstart/data_for_collections" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_in_test_task_4_py.coverage" NAME="pytest in test_task_4.py Coverage Results" MODIFIED="1728640949574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$Cassandra.coverage" NAME="Cassandra Coverage Results" MODIFIED="1729241527154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw9_no_sql_databases" />
-    <SUITE FILE_PATH="coverage/PythonProjects$task_5.coverage" NAME="task_5 Coverage Results" MODIFIED="1729684722181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
+    <SUITE FILE_PATH="coverage/PythonProjects$task_5.coverage" NAME="task_5 Coverage Results" MODIFIED="1729841525893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw11_async_io" />
     <SUITE FILE_PATH="coverage/PythonProjects$taks_8.coverage" NAME="taks_8 Coverage Results" MODIFIED="1728210515665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw5_working_with_files_iterators_and_generators" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_for_test_TestString.coverage" NAME="pytest for test.TestString Coverage Results" MODIFIED="1728546217109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$Draft.coverage" NAME="Draft Coverage Results" MODIFIED="1728569067121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -470,7 +470,8 @@
     <SUITE FILE_PATH="coverage/PythonProjects$task_1__1_.coverage" NAME="task_1 (1) Coverage Results" MODIFIED="1728484594656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw3_oop_dunder_methods" />
     <SUITE FILE_PATH="coverage/PythonProjects$Doctest_factorial.coverage" NAME="Doctest factorial Coverage Results" MODIFIED="1728646525035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1728320426619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw6_modules_and_packages_data_warehouses/task_1" />
-    <SUITE FILE_PATH="coverage/PythonProjects$draft.coverage" NAME="draft Coverage Results" MODIFIED="1729758170996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProjects$taks_4.coverage" NAME="taks_4 Coverage Results" MODIFIED="1729849957250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw11_async_io" />
+    <SUITE FILE_PATH="coverage/PythonProjects$draft.coverage" NAME="draft Coverage Results" MODIFIED="1729860067794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProjects$tttt.coverage" NAME="tttt Coverage Results" MODIFIED="1729532488750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_in_test_py.coverage" NAME="pytest in test.py Coverage Results" MODIFIED="1728547065176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_in_test_draft_py.coverage" NAME="pytest in test_draft.py Coverage Results" MODIFIED="1728904631794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -478,17 +479,17 @@
     <SUITE FILE_PATH="coverage/PythonProjects$taks_7.coverage" NAME="taks_7 Coverage Results" MODIFIED="1727606223489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3_OOP_DunderMethods" />
     <SUITE FILE_PATH="coverage/PythonProjects$quick_start.coverage" NAME="quick_start Coverage Results" MODIFIED="1729238775418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pymongo-quickstart" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_in_test_task_1__py.coverage" NAME="pytest in test.py Coverage Results" MODIFIED="1728546104868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
-    <SUITE FILE_PATH="coverage/PythonProjects$task_4.coverage" NAME="task_4 Coverage Results" MODIFIED="1729699456896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
-    <SUITE FILE_PATH="coverage/PythonProjects$task_7.coverage" NAME="task_7 Coverage Results" MODIFIED="1729691697007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
+    <SUITE FILE_PATH="coverage/PythonProjects$task_4.coverage" NAME="task_4 Coverage Results" MODIFIED="1729857027912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
+    <SUITE FILE_PATH="coverage/PythonProjects$task_7.coverage" NAME="task_7 Coverage Results" MODIFIED="1729862214153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw11_async_io" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_for_task_6_unittests_TestStringMethods.coverage" NAME="pytest for task_6_unittests.TestStringMethods Coverage Results" MODIFIED="1728661894225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$redis.coverage" NAME="hw_db_red Coverage Results" MODIFIED="1729255726849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw9_no_sql_databases" />
-    <SUITE FILE_PATH="coverage/PythonProjects$task_1.coverage" NAME="task_1 Coverage Results" MODIFIED="1729611365981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
+    <SUITE FILE_PATH="coverage/PythonProjects$task_1.coverage" NAME="task_1 Coverage Results" MODIFIED="1729844496246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_for_task_6_test_zero_balance.coverage" NAME="pytest for task_6.test_zero_balance Coverage Results" MODIFIED="1728655237885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$db_creation.coverage" NAME="db_creation Coverage Results" MODIFIED="1729010477311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw8_databases_sql_lite" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_for_test_task6_pytests_test_zero_balance.coverage" NAME="pytest for test_task6_pytests.test_zero_balance Coverage Results" MODIFIED="1728655422857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_for_task_6_TestStringMethods_test_get_user_data.coverage" NAME="pytest for task_6.TestStringMethods.test_get_user_data Coverage Results" MODIFIED="1728654462123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_for_task_2_TestUserData.coverage" NAME="pytest for task_2.TestUserData Coverage Results" MODIFIED="1728565911722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
-    <SUITE FILE_PATH="coverage/PythonProjects$task_2.coverage" NAME="task_2 Coverage Results" MODIFIED="1729611441239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing" />
+    <SUITE FILE_PATH="coverage/PythonProjects$task_2.coverage" NAME="task_2 Coverage Results" MODIFIED="1729848471256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw11_async_io" />
     <SUITE FILE_PATH="coverage/PythonProjects$pytest_for_test_task_7_test_read_file.coverage" NAME="pytest for test_task_7.test_read_file Coverage Results" MODIFIED="1728652800399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw7_testing_in_python" />
     <SUITE FILE_PATH="coverage/PythonProjects$task_8.coverage" NAME="task_8 Coverage Results" MODIFIED="1727788022121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw4._oop_introspection_reflection " />
     <SUITE FILE_PATH="coverage/PythonProjects$draft1.coverage" NAME="draft1 Coverage Results" MODIFIED="1728916951179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
