@@ -4,28 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c38e20a-300f-4346-a53b-95ed5792a72f" name="Changes" comment="Commit_HW_11_part1">
+    <list default="true" id="8c38e20a-300f-4346-a53b-95ed5792a72f" name="Changes" comment="Commit_HW_11_part2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_7.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw10_multithreading_vs_multiprocessing/task_7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw11_async_io/taks_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw11_async_io/taks_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw11_async_io/task_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw11_async_io/task_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw11_async_io/task_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw11_async_io/task_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw11_async_io/task_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw11_async_io/task_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw11_async_io/task_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw11_async_io/task_5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw11_async_io/task_6.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw11_async_io/task_6.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw11_async_io/task_7.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw11_async_io/task_7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7_testing_in_python/task_1_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7_testing_in_python/task_1_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7_testing_in_python/task_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7_testing_in_python/task_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7_testing_in_python/task_6.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7_testing_in_python/task_6.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7_testing_in_python/task_6_unittests.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7_testing_in_python/task_6_unittests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7_testing_in_python/test_task6_pytests.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7_testing_in_python/test_task6_pytests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7_testing_in_python/test_task_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7_testing_in_python/test_task_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7_testing_in_python/test_task_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7_testing_in_python/test_task_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw8_databases_sql_lite/db_creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8_databases_sql_lite/db_creation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw8_databases_sql_lite/insert_movies_and_actors.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8_databases_sql_lite/insert_movies_and_actors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw8_databases_sql_lite/selections_from_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8_databases_sql_lite/selections_from_db.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +307,7 @@
       <workItem from="1729664727100" duration="20165000" />
       <workItem from="1729703167648" duration="26000" />
       <workItem from="1729753369051" duration="17510000" />
-      <workItem from="1729835463980" duration="20114000" />
+      <workItem from="1729835463980" duration="21024000" />
     </task>
     <task id="LOCAL-00001" summary="HW2_IntermediateCommit">
       <created>1727015718924</created>
@@ -414,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729862419244</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Commit_HW_11_part2">
+      <option name="closed" value="true" />
+      <created>1729864494448</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729864494448</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +435,8 @@
     <MESSAGE value="Commit_HW_10" />
     <MESSAGE value="Commit_HW_11" />
     <MESSAGE value="Commit_HW_11_part1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit_HW_11_part1" />
+    <MESSAGE value="Commit_HW_11_part2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit_HW_11_part2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonProjects$math_utils.coverage" NAME="math_utils Coverage Results" MODIFIED="1728319977184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw6_modules_and_packages_data_warehouses/task_1" />

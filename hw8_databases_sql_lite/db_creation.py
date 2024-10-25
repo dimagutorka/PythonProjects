@@ -1,43 +1,44 @@
 import sqlite3
 
-
 try:
-	conn = sqlite3.connect('movie_warehouse.db')
-	cursor = conn.cursor()
+    # Establish a connection to the SQLite database
+    with sqlite3.connect('movie_warehouse.db') as conn:
+        cursor = conn.cursor()
 
-	# Create tables
-	cursor.execute('''
-	CREATE TABLE IF NOT EXISTS Movies (
-	    id INTEGER PRIMARY KEY AUTOINCREMENT,
-	    title TEXT NOT NULL,
-	    release_year INTEGER,
-	    genre TEXT
-	)
-	''')
+        # Create Movies table
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS Movies (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            release_year INTEGER,
+            genre TEXT
+        )
+        ''')
 
-	cursor.execute('''
-	CREATE TABLE IF NOT EXISTS Actors (
-	    id INTEGER PRIMARY KEY AUTOINCREMENT,
-	    name TEXT NOT NULL,
-	    birth_year INTEGER
-	)
-	''')
+        # Create Actors table
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS Actors (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            birth_year INTEGER
+        )
+        ''')
 
-	cursor.execute('''
-	CREATE TABLE IF NOT EXISTS Movie_cast (
-	    movie_id INTEGER,
-	    actor_id INTEGER,
-	    PRIMARY KEY (movie_id, actor_id),
-	    FOREIGN KEY (movie_id) REFERENCES Movies(id),
-	    FOREIGN KEY (actor_id) REFERENCES Actors(id)
-	)
-	''')
+        # Create Movie_cast table with foreign key constraints
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS Movie_cast (
+            movie_id INTEGER,
+            actor_id INTEGER,
+            PRIMARY KEY (movie_id, actor_id),
+            FOREIGN KEY (movie_id) REFERENCES Movies(id) ON DELETE CASCADE,
+            FOREIGN KEY (actor_id) REFERENCES Actors(id) ON DELETE CASCADE
+        )
+        ''')
+
+        print("Tables created successfully.")
 
 except sqlite3.Error as e:
-	print('Error %d: %s' % (e.args[0], e.args[1]))
+    # Handle database errors with more robust exception handling
+    print(f"SQLite error: {e}")
 
-finally:
-	if conn:
-		conn.close()
-		print('Connection closed.')
-
+# Connection automatically closes here due to the context manager
