@@ -3,14 +3,12 @@ import time
 import requests
 from images_urls import urls
 
-images_names = []
-
 
 def download(url):
 	img_bytes = requests.get(url).content
 	img_name = url.split("/")[-1]
 	img_name = f'{img_name}.jpg'
-	images_names.append(img_name)
+
 	with open(f"images/{img_name}", 'wb') as img_file:
 		img_file.write(img_bytes)
 		print(f'Photo {img_name} was downloaded and saved')
