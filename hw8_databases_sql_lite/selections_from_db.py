@@ -112,6 +112,7 @@ def main():
 	try:
 		with sqlite3.connect('movie_warehouse.db') as conn:
 			cursor = conn.cursor()
+
 			all_data_from_movies_actors_tables(cursor)
 			distinct_movies(cursor)
 			movie_by_key_word(cursor, "keyword")  # Replace "keyword" with the actual keyword
@@ -120,6 +121,7 @@ def main():
 			limited_amount_of_movies(cursor, limit=10)
 			unite_movies_and_actors(cursor)
 			movie_age(cursor)
+
 	except sqlite3.Error as e:
 		print(f"SQLite error: {e}")
 	finally:
