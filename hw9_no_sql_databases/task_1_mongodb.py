@@ -17,7 +17,6 @@ try:
 	database = client["online_store"]
 	collection_with_products = database["collection_products"]
 	collection_with_orders = database["collection_orders"]
-
 	collection_with_products.create_index("category")
 
 

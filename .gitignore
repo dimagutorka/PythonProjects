@@ -1,7 +1,10 @@
 /.idea
-/Users/cblpok/Documents/GitHub/PythonProjects/venv
-/Users/cblpok/Documents/GitHub/PythonProjects/draft.py
+draft.py
 __pycache__/
-.idea/workspace.xml
+*.pyc
+venv/
+hw_15_django_views_and_templates/my_site/django_my_site_env
+hw_14_django_into/django_environment/
+
 
 
