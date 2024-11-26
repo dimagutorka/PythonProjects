@@ -25,3 +25,7 @@ a = (1,2,3)
 c = a + (4,5,6)
 
 print(c)
+
+
+
+a = input('enter').capitalize()

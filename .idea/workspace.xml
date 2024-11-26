@@ -4,31 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c38e20a-300f-4346-a53b-95ed5792a72f" name="Changes" comment="HW_12_and_13_anotations_and_docs">
-      <change afterPath="$PROJECT_DIR$/hw_16_django_models/my_project/board/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_16_django_models/my_project/board/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_16_models_orm/my_project_board/board_app/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_16_models_orm/my_project_board/board_app/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/templates/users/basic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/templates/users/change_password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/templates/users/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/templates/users/login_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/templates/users/no_account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/templates/users/registration_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/templates/users/update_user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/templates/users/user_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/users/urls.py" afterDir="false" />
+    <list default="true" id="8c38e20a-300f-4346-a53b-95ed5792a72f" name="Changes" comment="Homework 19">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw9_no_sql_databases/task_3_cassandra.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw9_no_sql_databases/task_3_cassandra.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/templates/main/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/templates/main/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/templates/main/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/templates/main/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/templates/main/service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_15_django_views_and_templates/my_site/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_17_django_forms/login_registration/login_registration/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_17_django_forms/login_registration/login_registration/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;dimagutorka&quot;
-  }
+  &quot;lastFilter&quot;: {}
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -89,6 +65,7 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortKey" value="BY_TIME_ASCENDING" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
@@ -140,7 +117,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/cblpok/Documents/GitHub/PythonProjects/hw_15_django_views_and_templates/my_site/main/templates/main/img&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/cblpok/Documents/GitHub/PythonProjects&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -298,9 +275,9 @@
     <list>
       <item itemvalue="Django Server.Django Development Server" />
       <item itemvalue="Python.my_project" />
+      <item itemvalue="Python.draft" />
       <item itemvalue="Python.manage" />
       <item itemvalue="Python.task_3_cassandra" />
-      <item itemvalue="Python.draft" />
     </list>
     <recent_temporary>
       <list>
@@ -412,7 +389,11 @@
       <workItem from="1731853042335" duration="3847000" />
       <workItem from="1731918329586" duration="25493000" />
       <workItem from="1731954022253" duration="27169000" />
-      <workItem from="1732034190844" duration="7946000" />
+      <workItem from="1732034190844" duration="14853000" />
+      <workItem from="1732258872995" duration="105000" />
+      <workItem from="1732549965577" duration="8107000" />
+      <workItem from="1732608561206" duration="915000" />
+      <workItem from="1732611648404" duration="8818000" />
     </task>
     <task id="LOCAL-00001" summary="HW2_IntermediateCommit">
       <created>1727015718924</created>
@@ -534,7 +515,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730464838540</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added hw 16-17">
+      <option name="closed" value="true" />
+      <created>1732044505797</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732044505797</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Homework 19">
+      <option name="closed" value="true" />
+      <created>1732611192971</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1732611192972</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +542,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -568,7 +577,9 @@
     <MESSAGE value="Added some anotations and doc strings" />
     <MESSAGE value="HW_12and13" />
     <MESSAGE value="HW_12_and_13_anotations_and_docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW_12_and_13_anotations_and_docs" />
+    <MESSAGE value="Added hw 16-17" />
+    <MESSAGE value="Homework 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homework 19" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonProjects$math_utils.coverage" NAME="math_utils Coverage Results" MODIFIED="1728319977184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw6_modules_and_packages_data_warehouses/task_1" />
