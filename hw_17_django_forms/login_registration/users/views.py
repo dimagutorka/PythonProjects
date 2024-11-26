@@ -1,9 +1,10 @@
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.forms import AuthenticationForm
 from users.forms import RegistrationForm, UpdateUserForm, UpdateUserProfileForm, CustomPasswordChangeForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 def registration_view(request):
@@ -42,6 +43,7 @@ def login_view(request):
 	return render(request, 'users/login_page.html', {'form': form})
 
 
+@login_required
 def logout_view(request):
 	logout(request)
 	return redirect('home')
@@ -70,6 +72,7 @@ def update_user_profile(request):
 
 @login_required(login_url='no_account')
 def change_password_view(request):
+
 	if request.method == 'POST':
 		form = CustomPasswordChangeForm(user=request.user, data=request.POST)
 		CustomPasswordChangeForm(user=request.user)
@@ -90,9 +93,9 @@ def user_profile(request):
 
 
 def home(request):
-	return render(request, 'users/home.html')
+	raise Exception
+	# return render(request, 'users/home.html')
 
 
 def no_account(request):
 	return render(request, 'users/no_account.html')
-
