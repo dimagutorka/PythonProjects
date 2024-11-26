@@ -1,0 +1,65 @@
+{% extends 'users/basic.html' %}
+
+
+{% block content %}
+    <div class="row my-3 p-3">
+        <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;"/>
+    </div>
+    {% if user_form.errors %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <div id="form_errors">
+                {% for key, value in user_form.errors.items %}
+                    <strong>{{ value }}</strong>
+                {% endfor %}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <div class="form-content">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-md-5">
+                    
+                        {% for field in user_form %}
+                        {% if field.errors %}
+                            {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                            <label class="small mb-1">{{ field.label_tag }}</label>{{ field }}
+                            <p></p>
+                        {% endfor %}
+                
+                        {% for field in profile_form %}
+                        {% if field.errors %}
+                                        {% for error in field.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                        {% endif %}
+                            <label class="small mb-1">{{ field.label_tag }}</label> {{ field }}
+                            <p></p>
+                        {% endfor %}
+{#                    #}
+{#                    <div class="form-group">#}
+{#                        <label class="small mb-1">Username:</label>{{ user_form.username }}#}
+{#                        <label class="small mb-1">Email:</label>{{ user_form.email }}#}
+{#                    </div>#}
+{#           #}
+{#                    <label class="small mb-1">Change your birthday:</label> {{ profile_form.birth_date }}#}
+{#                    <label class="small mb-1">Bio:</label> {{ profile_form.bio }}#}
+{#                    <label class="small mb-1">Location:</label> {{ profile_form.location }}#}
+{#                    <p></p>#}
+{#                    <label class="small mb-1">Change Avatar:</label> {{ profile_form.avatar }} #}
+
+
+                </div>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-dark btn-lg">Save Changes</button>
+            <button type="reset" class="btn btn-dark btn-lg">Reset</button>
+        </form>
+    </div>
+{% endblock content %}

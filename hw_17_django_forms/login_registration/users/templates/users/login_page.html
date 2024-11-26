@@ -1,0 +1,23 @@
+{% extends 'users/basic.html' %}
+
+{% block title %} Log in {% endblock %}
+
+{% block content %}
+
+    <h1>This is log in page</h1>
+
+    <form action="/login/" method="post" novalidate>
+    {% csrf_token %}
+        <h2>Log Up</h2>
+
+        {% if error %}
+            <p style="color:red"> {{ error }}</p>
+        {% endif %}
+        {{ form }}
+
+    <input type="submit" value="Log in" />
+
+    </form>
+
+
+{% endblock %}
