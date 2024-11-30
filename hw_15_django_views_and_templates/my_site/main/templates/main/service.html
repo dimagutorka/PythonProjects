@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Service page {% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="list-group">
+
+
+            {% for service in services %}
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ service.first_name | capfirst }} {{ service.last_name | capfirst }} </h5>
+                        <small class="text-body-secondary">Last updated: 3 days ago</small>
+                    </div>
+                    <p class="mb-1">Working email: {{ service.email }}</p>
+                    <p class="mb-1">Phone number: {{ service.phone }}</p>
+                </a>
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+
+{% endblock %}
