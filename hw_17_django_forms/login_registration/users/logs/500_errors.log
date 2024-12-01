@@ -1,0 +1,28 @@
+500 Error /home/Method=GETException=
+Traceback (most recent call last):
+  File "/Users/cblpok/Documents/GitHub/PythonProjects/hw_17_django_forms/dj_venv_forms/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cblpok/Documents/GitHub/PythonProjects/hw_17_django_forms/login_registration/users/views.py", line 96, in home
+    raise Exception
+Exception
+500 Error /home/Method=GETException=
+Traceback (most recent call last):
+  File "/Users/cblpok/Documents/GitHub/PythonProjects/hw_17_django_forms/dj_venv_forms/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cblpok/Documents/GitHub/PythonProjects/hw_17_django_forms/login_registration/users/views.py", line 96, in home
+    raise Exception
+Exception
+500 Error /home/Method=GETException=
+Traceback (most recent call last):
+  File "/Users/cblpok/Documents/GitHub/PythonProjects/hw_17_django_forms/dj_venv_forms/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cblpok/Documents/GitHub/PythonProjects/hw_17_django_forms/login_registration/users/views.py", line 96, in home
+    raise Exception
+Exception
+500 Error /home/Method=GETException=
+Traceback (most recent call last):
+  File "/Users/cblpok/Documents/GitHub/PythonProjects/hw_17_django_forms/dj_venv_forms/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cblpok/Documents/GitHub/PythonProjects/hw_17_django_forms/login_registration/users/views.py", line 96, in home
+    raise Exception
+Exception

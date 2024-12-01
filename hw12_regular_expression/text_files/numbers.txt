@@ -1,0 +1,12 @@
+# phone_number_filter('123-456-7890')  # Valid: Standard format with dashes
+# phone_number_filter('123.456.7890')  # Valid: Format with dots as separators
+# phone_number_filter('1234567890')
+# phone_number_filter (123) 456-7890  # Valid: Standard format with parentheses
+
+# phone_number_filter('(123  456-7890')  # Invalid: Missing closing parenthesis
+# phone_number_filter('(123 456-7890')  # Invalid: Missing closing parenthesis and space
+# phone_number_filter('(123)) 456-7890')  # Invalid: Extra closing parenthesis
+# phone_number_filter('(123)) 456 7890')  # Invalid: Multiple issues with spacing and parentheses
+# phone_number_filter('123--456-7890')  # Invalid: Double dash
+# phone_number_filter('123.456..7890')  # Invalid: Double dot
+# phone_number_filter('123456.7890')
