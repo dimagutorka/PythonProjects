@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1> Hiiii </h1>
+
+
+
+<form action="{% url 'user_profile_form' %}" method="POST" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+    <!-- Render UserForm -->
+    {% for field in form_user %}
+        <p>
+        {% if field.errors %}
+            <ul>
+            {% for error in field.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {{ field.label_tag }} {{ field }}
+        </p>
+    {% endfor %}
+
+    <!-- Render UserProfileForm -->
+    {% for field in form_userprofile %}
+        <p>
+        {% if field.errors %}
+            <ul>
+            {% for error in field.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {{ field.label_tag }} {{ field }}
+        </p>
+    {% endfor %}
+
+
+    
+    <input type="submit" value="Update Profile">
+</form>
+
+
+
+</body>
+</html>

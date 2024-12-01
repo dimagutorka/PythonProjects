@@ -1,9 +1,30 @@
-from django.shortcuts import render, get_list_or_404
-from basic_site.models import UserProfile
-from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from basic_site.forms import UserProfileForm, UserForm
+from django.contrib import messages
+
+
+def update_user_profile(request):
+	if request.method == 'POST':
+		form_user = UserForm(request.POST, instance=request.user)
+		form_userprofile = UserProfileForm(request.POST, request.FILES, instance=request.user.userprofile)
+
+		if form_user.is_valid() and form_userprofile.is_valid():
+			print(request.FILES.get('avatar'))
+
+			form_user.save()
+			form_userprofile.save()
+			messages.success(request, 'Your profile has been updated')
+
+			return redirect('home')
+
+	else:
+
+		form_user = UserForm(instance=request.user)
+		form_userprofile = UserProfileForm(instance=request.user.userprofile)
+
+	return render(request, 'basic_site/update_user.html', {'form_user': form_user,
+	                                                       'form_userprofile': form_userprofile})
 
 
 def home(request):
-	# list_user = get_list_or_404(User)
-	context = {"all_users": 111}
-	return render(request, 'basic_site/home.html', context)
+	return render(request, 'home.html')

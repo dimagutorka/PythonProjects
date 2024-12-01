@@ -1,8 +1,0 @@
-Unauthorized access attempt: Path=/registration/, User-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, Time=2024-11-26T17:32:31.004928+00:00
-Unauthorized access attempt: Path=/login/, User-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, Time=2024-11-26T17:33:12.793552+00:00
-Unauthorized access attempt: Path=/login/, User-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, Time=2024-11-26T17:33:14.642558+00:00
-Unauthorized access attempt: Path=/login/, User-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, Time=2024-11-26T17:33:16.475833+00:00
-Unauthorized access attempt: Path=/logout/, User-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, Time=2024-11-26T17:58:26.334376+00:00
-Unauthorized access attempt: Path=/logout/, User-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, Time=2024-11-26T17:58:42.899329+00:00
-Unauthorized access attempt: Path=/logout/, User-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, Time=2024-11-26T18:02:24.057214+00:00
-Unauthorized access attempt: Path=/logout/, User-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, Time=2024-11-26T18:05:55.239767+00:00
