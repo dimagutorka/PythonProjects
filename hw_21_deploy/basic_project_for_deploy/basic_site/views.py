@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from basic_site.forms import UserProfileForm, UserForm
 from django.contrib import messages
 
+from basic_site.models import Genres
+
 
 def update_user_profile(request):
 	if request.method == 'POST':
@@ -28,3 +30,15 @@ def update_user_profile(request):
 
 def home(request):
 	return render(request, 'home.html')
+
+
+def main_page_view(request):
+	all_genres = Genres.objects.all()
+	context = {'genres': all_genres}
+	return render(request, 'basic_site/main_page.html', context)
+
+
+def one_genre(request, genre_id):
+	one_genre = Genres.objects.get(pk=genre_id)
+	context = {'one_genre': one_genre}
+	return render(request, 'basic_site/one_genre.html', context)

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1111</title>
+</head>
+<body>
+
+
+<ul>
+{% for genre in genres %}
+    <li>
+    <a href="{% url 'one_genre' genre.id %}"> {{ genre.name }} </a>
+    </li>
+        <li>{{ genre_id }}</li>
+{% endfor %}
+</ul>
+
+
+</body>
+</html>
