@@ -1,0 +1,11 @@
+{% extends 'basic.html' %}
+
+
+{% block content %}
+<ul>
+    <li>{{ movie.title }}       </li>
+    <li>{{ movie.release_date }}</li>
+    <li>{{ movie.country }}     </li>
+    <li>{{ movie.genres.get }}  </li>
+</ul>
+{% endblock %}

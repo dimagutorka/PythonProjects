@@ -10,9 +10,8 @@
 <ul>
 {% for genre in genres %}
     <li>
-    <a href="{% url 'one_genre' genre.id %}"> {{ genre.name }} </a>
+    <a href="{% url 'genre' genre.id %}"> {{ genre.name }} </a>
     </li>
-        <li>{{ genre_id }}</li>
 {% endfor %}
 </ul>
 
