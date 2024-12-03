@@ -23,5 +23,5 @@ class UserForm(forms.ModelForm):
 class MovieForm(forms.ModelForm):
 	class Meta:
 		model = Movies
-		fields = ['title', 'release_date', 'country', 'genres', 'rating']
+		fields = ['title', 'release_date', 'country', 'genres', 'rating', 'poster']
 

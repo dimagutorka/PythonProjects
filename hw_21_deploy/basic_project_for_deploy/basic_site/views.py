@@ -33,18 +33,16 @@ def create_movie(request):
 		return render(request, 'basic_site/movie_creation.html', {'form': form})
 
 	if request.method == 'POST':
-		form = MovieForm(request.POST)
+		form = MovieForm(request.POST, request.FILES)
 
 		if form.is_valid():
 			form.save()
 			messages.success(request, 'Your movie has been created')
 
-			return redirect('movie')
-
+			return redirect('home')
 
 		else:
 			return render(request, 'basic_site/movie_creation.html', {"form": form})
-
 
 
 def home(request):
@@ -67,5 +65,7 @@ def genre_page_view(request, genre_id):
 
 def movie_page_view(request, movie_id):
 	movie = Movies.objects.get(pk=movie_id)
-	context = {'movie': movie}
+	comments = movie.comments.all()
+	context = {'movie': movie,
+	           'comments': comments}
 	return render(request, 'basic_site/movie_page.html', context)

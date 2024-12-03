@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'basic.html' %}
 
-<form action="=" enctype="multipart/form-data"></form>
-</body>
-</html>
+
+{% block content %}
+<form action="{% url 'movie_creation' %}" enctype="multipart/form-data" method="POST" novalidate>
+    {% csrf_token %}
+
+
+{% for field in form %}
+    {% if field.errors %}
+        {% for error in field.errors %}
+        {{ error }}
+        {% endfor %}
+    {% endif %}
+        {{ field.label_tag }} {{field}}
+{% endfor %}
+    <input type="submit" value="Create movie">
+
+</form>
+{% endblock %}
+

@@ -8,4 +8,14 @@
     <li>{{ movie.country }}     </li>
     <li>{{ movie.genres.get }}  </li>
 </ul>
+        <img src="{{ movie.poster.url }}" alt="{{ movie.title }} Poster">
+    
+    <p></p>
+    
+    <ul>
+    {% for com in comments %}
+        <li> {{ com }}  </li>
+    {% endfor %}
+    </ul>
+
 {% endblock %}

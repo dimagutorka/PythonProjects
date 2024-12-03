@@ -25,7 +25,7 @@ class Movies(models.Model):
 	country = models.CharField(max_length=100)
 	genres = models.ManyToManyField(Genres, related_name='movies')
 	rating = models.IntegerField(default=0)
-	poster = models.TextField(blank=True)
+	poster = models.ImageField(upload_to='movie_posters/', blank=True, null=True, default='movie_posters/default-poster.jpg')
 
 	def __str__(self):
 		return self.title
