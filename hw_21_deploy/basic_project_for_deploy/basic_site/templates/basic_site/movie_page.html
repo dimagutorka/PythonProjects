@@ -10,12 +10,17 @@
 </ul>
         <img src="{{ movie.poster.url }}" alt="{{ movie.title }} Poster">
     
-    <p></p>
+    
+     <p>
+    {% if avg_movie_rate %}
+    <p> Movie&apos;s rate {{ avg_movie_rate }} </p>
+        {% else %}
+         Movie&apos;s rate: not enough rates to show the movie rating
+    {% endif %}
     
     <form action="{% url 'movie' movie.id %}"  enctype="multipart/form-data" method="POST">
     {% csrf_token %}
         {{ form.as_p }}
-        
         <input type="submit" value="Add comment">
     </form>
     
