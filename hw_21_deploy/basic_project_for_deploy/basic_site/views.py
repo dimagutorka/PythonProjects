@@ -1,3 +1,5 @@
+from turtledemo.chaos import coosys
+
 from django.db.models import Avg
 from django.shortcuts import render, redirect, get_object_or_404
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm
@@ -52,7 +54,7 @@ def home(request):
 
 def genres_page_view(request):
 	all_genres = Genres.objects.all()
-	# the_most_rated_movies = Movies.objects.order_by('-rates')[:3]
+	# the_most_rated_movies = Movies.objects.order_by('-rates')[:3] # CHECK !!!!
 
 	context = {'genres': all_genres}
 	return render(request, 'basic_site/genres_page.html', context)
@@ -67,63 +69,44 @@ def genre_page_view(request, genre_id):
 
 
 def movie_page_view(request, movie_id):
-	movie = Movies.objects.get(pk=movie_id)
+	movie = get_object_or_404(Movies, pk=movie_id)
 	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg']
-	# This ['rate__avg'] is needed to retrieve the value from the dict
 	comments = movie.comments.all().select_related('user')
+
+	rate_instance = Rate.objects.filter(user=request.user, movie=movie).first()
+	rate_form = RateForm(instance=rate_instance)
+	comment_form = CommentForm()
+
+	if request.method == 'POST':
+		if 'comment_submit' in request.POST:
+			comment_form = CommentForm(request.POST)
+
+			if comment_form.is_valid():
+				comment = comment_form.save(commit=False)
+				comment.user = request.user
+				comment.movie = movie
+				comment.save()
+				messages.success(request, message='Your comment has been added')
+				return redirect('movie', movie_id=movie_id)
+
+		elif 'rate_submit' in request.POST:
+			rate_form = RateForm(request.POST, instance=rate_instance)
+
+			if rate_form.is_valid():
+				rate = rate_form.save(commit=False)
+				rate.user = request.user
+				rate.movie = movie
+				rate.save()
+				messages.success(request, message='Your rate has been added')
+				return redirect('movie', movie_id=movie_id)
+
 	context = {'movie': movie,
 	           'comments': comments,
-	           'avg_movie_rate': avg_movie_rate}
+	           'avg_movie_rate': avg_movie_rate,
+	           'comment_form': comment_form,
+	           'rate_form': rate_form}
 
-	if request.method == 'GET':
-		form = CommentForm()
-		context['form'] = form
-		return render(request, 'basic_site/movie_page.html', context)
-
-	if request.method == 'POST':
-		form = CommentForm(request.POST)
-
-		if form.is_valid():
-			comment = form.save(commit=False)
-			comment.user = request.user
-			comment.movie = movie
-			comment.save()
-
-			messages.success(request, message='Your comment has been added')
-			return redirect('movie', movie_id=movie_id)
-
-		else:
-			context['form'] = form
-			return render(request, 'basic_site/movie_page.html', context)
-
-
-def rate_movie(request, movie_id):
-	movie = get_object_or_404(Movies, pk=movie_id)
-	user = request.user
-
-	try:
-		rate_instance = Rate.objects.get(user=user, movie=movie)
-	except Rate.DoesNotExist:
-		rate_instance = None
-
-	form = RateForm(instance=rate_instance)
-
-	if request.method == 'POST':
-		form = RateForm(request.POST, instance=rate_instance)
-
-		if form.is_valid():
-			rate = form.save(commit=False)
-			rate.user = user
-			rate.movie = movie
-			rate.save()
-
-			return redirect('movie', movie_id=movie_id)
-
-		else:
-			return render(request, 'basic_site/rating.html', {'form': form, 'movie_id': movie.id})
-
-	return render(request, 'basic_site/rating.html', {'form': form, 'movie_id': movie.id})
-
+	return render(request, 'basic_site/movie_page.html', context)
 
 
 

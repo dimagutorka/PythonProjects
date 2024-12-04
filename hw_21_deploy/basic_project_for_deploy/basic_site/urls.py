@@ -1,6 +1,6 @@
 from django.urls import path
 from basic_project_for_deploy import settings
-from basic_site.views import update_user_profile, home, genre_page_view, genres_page_view, movie_page_view, create_movie, rate_movie
+from basic_site.views import update_user_profile, home, genre_page_view, genres_page_view, movie_page_view, create_movie
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -10,7 +10,6 @@ urlpatterns = [
 	path('genre/<int:genre_id>/', genre_page_view, name='genre'),
 	path('movie/<int:movie_id>', movie_page_view, name='movie'),
 	path('movie_creation/', create_movie, name='movie_creation'),
-	path('movie/<int:movie_id>/', rate_movie, name='rate'),
 
 ]
 

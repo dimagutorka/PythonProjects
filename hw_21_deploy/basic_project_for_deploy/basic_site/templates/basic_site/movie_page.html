@@ -8,33 +8,37 @@
     <li>{{ movie.country }}     </li>
     <li>{{ movie.genres.get }}  </li>
 </ul>
-        <img src="{{ movie.poster.url }}" alt="{{ movie.title }} Poster">
+    
+    <img src="{{ movie.poster.url }}" alt="{{ movie.title }} Poster">
     
     
      <p>
     {% if avg_movie_rate %}
+        
     <p> Movie&apos;s rate {{ avg_movie_rate }} </p>
         {% else %}
          Movie&apos;s rate: not enough rates to show the movie rating
+        
     {% endif %}
     
     
-    <form action="{% url 'movie' movie.id %}"  enctype="multipart/form-data" method="POST">
+    <form action="{% url 'movie' movie.id %}" enctype="multipart/form-data" method="POST">
     {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Add comment">
+        {{ comment_form.as_p }}
+       <button type="submit" name="comment_submit">Post the comment</button>
     </form>
     
     {% for com in comments %}
         <p>{{ com.user.username }}: {{ com.content }} </p>
-         </p> 
+        </p> 
     {% endfor %}
     
     
-       <form action="{% url 'rate' movie.id %}" method="POST">
+    <form action="{% url 'movie' movie.id %}" method="POST">
     {% csrf_token %}
-        {{ form.as_p }}
-    <input type="submit" value="Rate the movie !">
+        {{ rate_form.as_p }}
+    <button type="submit" name="rate_submit">  Submit Rating </button>    
+    
     </form>
     
 
