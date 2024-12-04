@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from basic_site.forms import UserProfileForm, UserForm, MovieForm
+from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm
 from django.contrib import messages
 from basic_site.models import Genres, Movies
 
@@ -61,11 +61,61 @@ def genre_page_view(request, genre_id):
 	context = {'movies': movies}
 
 	return render(request, 'basic_site/genre_page.html', context)
+#
+#
+# def movie_page_view(request, movie_id):
+#
+# 	movie = Movies.objects.get(pk=movie_id)
+# 	comments = movie.comments.all().select_related('user')
+#
+# 	context = {'movie': movie,
+# 	           'comments': comments}
+#
+# 	return render(request, 'basic_site/movie_page.html', context)
+#
+#
+# def commend_adding(request):
+# 	if request.method == 'GET':
+# 		form = CommentForm()
+# 		return render(request, 'basic_site/comment_adding.html', {'form': form})
+#
+# 	if request.method == 'POST':
+# 		form = CommentForm(request.POST)
+#
+# 		if form.is_valid():
+# 			form.save()
+# 			messages.success(request, message='Your comment has been added')
+#
+# 			return redirect('movie')
+#
+# 		else:
+# 			return render(request, 'basic_site/comment_adding.html', {'form': form})
 
 
 def movie_page_view(request, movie_id):
 	movie = Movies.objects.get(pk=movie_id)
-	comments = movie.comments.all()
+	comments = movie.comments.all().select_related('user')
 	context = {'movie': movie,
 	           'comments': comments}
-	return render(request, 'basic_site/movie_page.html', context)
+
+	if request.method == 'GET':
+		form = CommentForm()
+		context['form'] = form
+		return render(request, 'basic_site/movie_page.html', context)
+
+	if request.method == 'POST':
+		form = CommentForm(request.POST)
+
+		if form.is_valid():
+			comment = form.save(commit=False)
+			comment.user = request.user
+			comment.movie = movie
+			comment.save()
+
+			messages.success(request, message='Your comment has been added')
+			return redirect('movie', movie_id=movie_id)
+
+		else:
+			context['form'] = form
+			return render(request, 'basic_site/movie_page.html', context)
+

@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import User
-from basic_site.models import UserProfile, Movies
+from basic_site.models import UserProfile, Movies, Comments
 
 
 class UserProfileForm(forms.ModelForm):
@@ -25,3 +24,8 @@ class MovieForm(forms.ModelForm):
 		model = Movies
 		fields = ['title', 'release_date', 'country', 'genres', 'rating', 'poster']
 
+
+class CommentForm(forms.ModelForm):
+	class Meta:
+		model = Comments
+		fields = ['content']

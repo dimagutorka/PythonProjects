@@ -12,10 +12,17 @@
     
     <p></p>
     
-    <ul>
+    <form action="{% url 'movie' movie.id %}"  enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+        {{ form.as_p }}
+        
+        <input type="submit" value="Add comment">
+    </form>
+    
     {% for com in comments %}
-        <li> {{ com }}  </li>
+        <p>{{ com.user.username }}: {{ com.content }} </p>
+         </p> 
     {% endfor %}
-    </ul>
+    
 
 {% endblock %}
