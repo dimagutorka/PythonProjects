@@ -17,7 +17,7 @@
       <sourceFolder url="file://$MODULE_DIR$/basic_project_for_deploy" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv_dj" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (hw21_deploy)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
