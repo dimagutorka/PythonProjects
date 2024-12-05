@@ -43,3 +43,6 @@ class RateForm(forms.ModelForm):
 	class Meta:
 		model = Rate
 		fields = ['rate']
+
+
+

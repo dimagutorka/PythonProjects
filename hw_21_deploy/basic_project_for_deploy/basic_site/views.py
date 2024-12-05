@@ -1,5 +1,6 @@
-from turtledemo.chaos import coosys
-
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
+from django.http import HttpResponse
 from django.db.models import Avg
 from django.shortcuts import render, redirect, get_object_or_404
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm
@@ -46,10 +47,6 @@ def create_movie(request):
 
 		else:
 			return render(request, 'basic_site/movie_creation.html', {"form": form})
-
-
-def home(request):
-	return render(request, 'basic_site/home.html')
 
 
 def genres_page_view(request):
@@ -109,6 +106,66 @@ def movie_page_view(request, movie_id):
 	return render(request, 'basic_site/movie_page.html', context)
 
 
+def cookie_test(request):
+	response = HttpResponse('Set cookie')
+	response.set_cookie('cookie_name', 'my_cookie')
+	response.set_cookie('cookie_name1', 'my_cookie1')
+
+	return render(request, 'basic_site/rating.html', {'response': response})
+
+
+# def login_page(request):
+# 	form = AuthenticationForm()
+# 	if request.method == 'POST':
+# 		username = request.POST.get('username')
+# 		password = request.POST.get('password')
+# 		user = authenticate(request, username=username, password=password)
+#
+# 		if user is None:
+# 			context = {'error': 'Invalid username or password', 'form': form}
+# 			return render(request, 'basic_site/login_page.html', {'form': form})
+#
+# 		response = redirect('home')
+# 		response.set_cookie('username', username, max_age=10)
+#
+# 		login(request, user)
+# 		return response
+#
+# 	return render(request, 'basic_site/login_page.html', {'form': form})
+
+
+def login_page(request):
+	if request.method == 'POST':
+		name = request.POST.get('name')
+		age = request.POST.get('age')
+
+		response = redirect('home')
+		response.set_cookie('name', name, max_age=30)
+		request.session['age'] = age
+
+		return response
+
+	return render(request, 'basic_site/login_page.html')
+
+
+def home(request):
+	username = request.COOKIES.get('name')
+	age = request.session.get('age')
+
+	if not username or not age:
+		return redirect('login')
+
+	response = HttpResponse(f'Hello, {username}! you\'re age is {age}')
+	response.set_cookie('name', username, max_age=30)
+
+	return response
+
+
+def logout_page(request):
+	response = redirect('home')
+	response.delete_cookie('name')
+	request.session.flush()
+	return response
 
 
 # If your template accesses the movie's genres:
