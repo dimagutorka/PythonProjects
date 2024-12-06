@@ -1,5 +1,3 @@
-from itertools import count
-
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponse
@@ -16,7 +14,6 @@ def update_user_profile(request):
 		form_userprofile = UserProfileForm(request.POST, request.FILES, instance=request.user.profile)
 
 		if form_user.is_valid() and form_userprofile.is_valid():
-			print(request.FILES.get('avatar'))
 
 			form_user.save()
 			form_userprofile.save()
@@ -52,7 +49,7 @@ def create_movie(request):
 
 
 def genres_page_view(request):
-	all_genres = Genres.objects.all()
+	all_genres = Genres.objects.all().prefetch_related('movies')
 	# the_most_rated_movies = Movies.objects.order_by('-rates')[:3] # CHECK !!!!
 
 	context = {'genres': all_genres}
@@ -70,7 +67,8 @@ def genre_page_view(request, genre_id):
 def movie_page_view(request, movie_id):
 	movie = get_object_or_404(Movies, pk=movie_id)
 	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg'] ## <- use prefetch ???
-	comments = movie.comments.all().select_related('user')
+	genres_in_movie = movie.genres.all()
+	comments = movie.comments.all()
 
 	rate_instance = Rate.objects.filter(user=request.user, movie=movie).first()
 	rate_form = RateForm(instance=rate_instance)
@@ -127,7 +125,9 @@ def movie_page_view(request, movie_id):
 	           'avg_movie_rate': avg_movie_rate,
 	           'comment_form': comment_form,
 	           'rate_form': rate_form,
-	           "recently_viewed": recently_view_products}
+	           "recently_viewed": recently_view_products,
+	           "genres_in_movie": genres_in_movie
+	           }
 
 	return render(request, 'basic_site/movie_page.html', context)
 
@@ -164,13 +164,3 @@ def logout_page(request):
 	response.delete_cookie('name')
 	request.session.flush()
 	return response
-
-
-# If your template accesses the movie's genres:
-# Copy code
-# {% for genre in movie.genres.all %}
-#     {{ genre.name }}
-# {% endfor %}
-# You can optimize this by prefetching genres:
-
-# movie = Movies.objects.prefetch_related('genres').get(pk=movie_id

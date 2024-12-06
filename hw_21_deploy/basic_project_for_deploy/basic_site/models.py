@@ -25,7 +25,8 @@ class Movies(models.Model):
 	country = models.CharField(max_length=100)
 	genres = models.ManyToManyField(Genres, related_name='movies')
 	rating = models.IntegerField(default=0) # DETELE !!!!!
-	poster = models.ImageField(upload_to='movie_posters/', blank=True, null=True, default='movie_posters/default-poster.jpg')
+	poster = models.ImageField(upload_to='movie_posters/', blank=True, null=True,
+	                           default='movie_posters/default-poster.jpg')
 	average_rating = models.FloatField(default=0.0)
 
 	def __str__(self):

@@ -6,7 +6,14 @@
         <li>{{ movie.title }}       </li>
         <li>{{ movie.release_date }}</li>
         <li>{{ movie.country }}     </li>
-        <li>{{ movie.genres.get }}  </li>
+{#        <li>{{ movie.genres.get }}  </li>#}
+
+    </ul>
+    <ul>
+        {% for genre in genres_in_movie %}
+    <li>{{ genre.name }}</li>
+    {% endfor %}
+    
     </ul>
 
     <img src="{{ movie.poster.url }}" alt="{{ movie.title }} Poster">
@@ -14,7 +21,6 @@
 
     <p>
         {% if avg_movie_rate %}
-
             <p> Movie&apos;s rate {{ avg_movie_rate }} </p>
         {% else %}Movie&apos;s rate: not enough rates to show the movie rating{% endif %}
 

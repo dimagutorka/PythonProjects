@@ -12,6 +12,12 @@
     <li>
     <a href="{% url 'genre' genre.id %}"> {{ genre.name }} </a>
     </li>
+    <ul>
+    {% for movie in genre.movies.all %}
+            <li>{{ movie.title }}</li>
+    {% endfor %}
+
+    </ul>
 {% endfor %}
 </ul>
 
