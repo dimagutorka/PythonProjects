@@ -1,3 +1,5 @@
+from itertools import count
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponse
@@ -67,7 +69,7 @@ def genre_page_view(request, genre_id):
 
 def movie_page_view(request, movie_id):
 	movie = get_object_or_404(Movies, pk=movie_id)
-	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg']
+	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg'] ## <- use prefetch ???
 	comments = movie.comments.all().select_related('user')
 
 	rate_instance = Rate.objects.filter(user=request.user, movie=movie).first()
@@ -97,41 +99,37 @@ def movie_page_view(request, movie_id):
 				messages.success(request, message='Your rate has been added')
 				return redirect('movie', movie_id=movie_id)
 
+	recently_view_products = None
+
+	# Recently movies
+	if "recently_viewed" in request.session:
+
+		movies = Movies.objects.filter(id__in=request.session["recently_viewed"])
+		recently_view_products = sorted(movies, key=lambda x: request.session["recently_viewed"].index(x.id))
+
+		if movie_id in request.session["recently_viewed"]:
+			request.session["recently_viewed"].remove(movie_id)
+			request.session["recently_viewed"].insert(0, movie_id)
+
+		elif movie_id not in request.session["recently_viewed"]:
+			request.session["recently_viewed"].insert(0, movie_id)
+
+		if len(request.session["recently_viewed"]) >= 6:
+			request.session["recently_viewed"].pop()
+
+	else:
+		request.session["recently_viewed"] = [movie_id]
+
+	request.session.modified = True
+
 	context = {'movie': movie,
 	           'comments': comments,
 	           'avg_movie_rate': avg_movie_rate,
 	           'comment_form': comment_form,
-	           'rate_form': rate_form}
+	           'rate_form': rate_form,
+	           "recently_viewed": recently_view_products}
 
 	return render(request, 'basic_site/movie_page.html', context)
-
-
-def cookie_test(request):
-	response = HttpResponse('Set cookie')
-	response.set_cookie('cookie_name', 'my_cookie')
-	response.set_cookie('cookie_name1', 'my_cookie1')
-
-	return render(request, 'basic_site/rating.html', {'response': response})
-
-
-# def login_page(request):
-# 	form = AuthenticationForm()
-# 	if request.method == 'POST':
-# 		username = request.POST.get('username')
-# 		password = request.POST.get('password')
-# 		user = authenticate(request, username=username, password=password)
-#
-# 		if user is None:
-# 			context = {'error': 'Invalid username or password', 'form': form}
-# 			return render(request, 'basic_site/login_page.html', {'form': form})
-#
-# 		response = redirect('home')
-# 		response.set_cookie('username', username, max_age=10)
-#
-# 		login(request, user)
-# 		return response
-#
-# 	return render(request, 'basic_site/login_page.html', {'form': form})
 
 
 def login_page(request):
