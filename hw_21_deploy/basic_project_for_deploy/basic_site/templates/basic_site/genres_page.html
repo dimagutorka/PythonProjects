@@ -8,16 +8,33 @@
 
 
 <ul>
-{% for genre in genres %}
-    <li>
-    <a href="{% url 'genre' genre.id %}"> {{ genre.name }} </a>
-    </li>
-    <ul>
-    {% for movie in genre.movies.all %}
-            <li>{{ movie.title }}</li>
+<h2> The most rated movies:</h2>
+    {% for i in the_most_rated_movies %}
+       
+        <li>{{ i.title }} - {{ i.average_rating }}</li>
+    
     {% endfor %}
 
-    </ul>
+
+    {% for genre in genres %}
+    <h3><a href="{% url 'genre' genre.id %}"> {{ genre.name }} </a></h3>
+        
+        
+         {% for movie in num_comments %}   
+        <ul>
+             {% if genre in movie.genres.all %}
+                 {% if movie.num_comments > 0 %}
+                     <li> {{ movie.title }} - {{ movie.num_comments }}</li>
+                     {% else %}
+                     <li> {{ movie.title }} </li>
+                      {% endif %}
+             
+             {% endif %}
+             </ul>
+            
+            {% endfor %}
+        
+        
 {% endfor %}
 </ul>
 

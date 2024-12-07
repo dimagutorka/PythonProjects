@@ -1,7 +1,9 @@
+from email.policy import default
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponse
-from django.db.models import Avg
+from django.db.models import Avg, Count, Q
 from django.shortcuts import render, redirect, get_object_or_404
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm
 from django.contrib import messages
@@ -48,10 +50,13 @@ def create_movie(request):
 
 
 def genres_page_view(request):
-	all_genres = Genres.objects.all().prefetch_related('movies')
-	# the_most_rated_movies = Movies.objects.order_by('-rates')[:3] # CHECK !!!!
+	all_genres = Genres.objects.prefetch_related('movies')
+	num_comments = Movies.objects.prefetch_related('genres').annotate(num_comments=Count('comments')).order_by('-num_comments')
+	the_most_rated_movies = Movies.objects.order_by('-average_rating')[:3] # CHECK !!!!
 
-	context = {'genres': all_genres}
+	context = {'genres': all_genres,
+	           'num_comments': num_comments,
+	           'the_most_rated_movies': the_most_rated_movies}
 	return render(request, 'basic_site/genres_page.html', context)
 
 
@@ -65,9 +70,9 @@ def genre_page_view(request, genre_id):
 
 def movie_page_view(request, movie_id):
 	movie = get_object_or_404(Movies, pk=movie_id)
-	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg']  ## <- use prefetch ???
+	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg']
 	genres_in_movie = movie.genres.all()
-	comments = movie.comments.all()
+	comments = movie.comments.all().annotate()
 
 	rate_instance = Rate.objects.filter(user=request.user, movie=movie).first()
 	rate_form = RateForm(instance=rate_instance)
@@ -163,4 +168,16 @@ def logout_page(request):
 	response.delete_cookie('name')
 	request.session.flush()
 	return response
+
+
+def some_filters(request):
+	num_comments = Movies.objects.annotate(num_comments=Count('comments')).order_by('-num_comments')
+	avg_rating = Movies.objects.annotate(avg_rating=Avg('rates', default=1)).order_by('-avg_rating')
+
+	contex = {'num_comments': num_comments,
+	          'avg_rating': avg_rating}
+
+
+	return render(request, 'basic_site/home.html', contex)
+
 
