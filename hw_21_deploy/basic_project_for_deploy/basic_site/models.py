@@ -21,12 +21,13 @@ class Genres(models.Model):
 
 class Movies(models.Model):
 	title = models.CharField(max_length=100, unique=True)
+	overview = models.TextField(max_length=500, blank=True) #NEW
 	release_date = models.DateField(null=True, blank=True)
 	country = models.CharField(max_length=100)
 	genres = models.ManyToManyField(Genres, related_name='movies')
-	rating = models.IntegerField(default=0) # DETELE !!!!!
 	poster = models.ImageField(upload_to='movie_posters/', blank=True, null=True,
-	                           default='movie_posters/default-poster.jpg')
+	                           default='movie_posters/default-poster.jpg') #NEW
+	adult = models.BooleanField(default=False) #NEW
 	average_rating = models.FloatField(default=0.0)
 
 	def __str__(self):

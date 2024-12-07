@@ -5,7 +5,7 @@ from django.db.models import Avg
 from django.shortcuts import render, redirect, get_object_or_404
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm
 from django.contrib import messages
-from basic_site.models import Genres, Movies, Rate
+from basic_site.models import Genres, Movies, Rate, UserProfile
 
 
 def update_user_profile(request):
@@ -14,7 +14,6 @@ def update_user_profile(request):
 		form_userprofile = UserProfileForm(request.POST, request.FILES, instance=request.user.profile)
 
 		if form_user.is_valid() and form_userprofile.is_valid():
-
 			form_user.save()
 			form_userprofile.save()
 			messages.success(request, 'Your profile has been updated')
@@ -66,7 +65,7 @@ def genre_page_view(request, genre_id):
 
 def movie_page_view(request, movie_id):
 	movie = get_object_or_404(Movies, pk=movie_id)
-	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg'] ## <- use prefetch ???
+	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg']  ## <- use prefetch ???
 	genres_in_movie = movie.genres.all()
 	comments = movie.comments.all()
 
@@ -164,3 +163,4 @@ def logout_page(request):
 	response.delete_cookie('name')
 	request.session.flush()
 	return response
+
