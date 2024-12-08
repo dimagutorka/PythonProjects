@@ -1,13 +1,14 @@
-from email.policy import default
-
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
+from django.db import connection
 from django.http import HttpResponse
-from django.db.models import Avg, Count, Q
+from django.db.models import Avg, Count
 from django.shortcuts import render, redirect, get_object_or_404
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm
 from django.contrib import messages
-from basic_site.models import Genres, Movies, Rate, UserProfile
+from basic_site.models import Genres, Movies, Rate
+from django.views.decorators.cache import cache_page
+from django.core.cache import cache
 
 
 def update_user_profile(request):
@@ -49,21 +50,34 @@ def create_movie(request):
 			return render(request, 'basic_site/movie_creation.html', {"form": form})
 
 
+# @cache_page(60*1)
 def genres_page_view(request):
-	all_genres = Genres.objects.prefetch_related('movies')
-	num_comments = Movies.objects.prefetch_related('genres').annotate(num_comments=Count('comments')).order_by('-num_comments')
-	the_most_rated_movies = Movies.objects.order_by('-average_rating')[:3] # CHECK !!!!
+	all_genres = cache.get('genres')
 
-	context = {'genres': all_genres,
-	           'num_comments': num_comments,
-	           'the_most_rated_movies': the_most_rated_movies}
+	if all_genres is None:
+		all_genres = Genres.objects.prefetch_related('movies')
+		cache.set('genres', all_genres, timeout=3600)
+		print('hit the db')
+	else:
+		print('hit the cache')
+
+	num_comments = (Movies.objects.prefetch_related('genres')
+	                .annotate(num_comments=Count('comments'))
+	                .order_by('-num_comments'))
+	the_most_rated_movies = Movies.objects.order_by('-average_rating')[:3]  # CHECK !!!!
+
+	context = {
+		'genres': all_genres,
+		'num_comments': num_comments,
+		'the_most_rated_movies': the_most_rated_movies
+	}
 	return render(request, 'basic_site/genres_page.html', context)
 
 
 def genre_page_view(request, genre_id):
-	all_movies_in_genre = get_object_or_404(Genres, pk=genre_id)
-	movies = all_movies_in_genre.movies.all()
-	context = {'movies': movies}
+	genre = get_object_or_404(Genres, pk=genre_id)
+	all_movies_in_genre = genre.movies.values('id', 'title')
+	context = {'movies': all_movies_in_genre}
 
 	return render(request, 'basic_site/genre_page.html', context)
 
@@ -72,7 +86,7 @@ def movie_page_view(request, movie_id):
 	movie = get_object_or_404(Movies, pk=movie_id)
 	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg']
 	genres_in_movie = movie.genres.all()
-	comments = movie.comments.all().annotate()
+	comments = movie.comments.select_related('user').all()
 
 	rate_instance = Rate.objects.filter(user=request.user, movie=movie).first()
 	rate_form = RateForm(instance=rate_instance)
@@ -150,6 +164,24 @@ def login_page(request):
 	return render(request, 'basic_site/login_page.html')
 
 
+def logout_page(request):
+	response = redirect('home')
+	response.delete_cookie('name')
+	request.session.flush()
+	return response
+
+
+# move to the utils.py
+def some_filters(request):
+	num_comments = Movies.objects.annotate(num_comments=Count('comments')).order_by('-num_comments')
+	avg_rating = Movies.objects.annotate(avg_rating=Avg('rates', default=1)).order_by('-avg_rating')
+
+	contex = {'num_comments': num_comments,
+	          'avg_rating': avg_rating}
+
+	return render(request, 'basic_site/home.html', contex)
+
+
 def home(request):
 	username = request.COOKIES.get('name')
 	age = request.session.get('age')
@@ -163,21 +195,7 @@ def home(request):
 	return response
 
 
-def logout_page(request):
-	response = redirect('home')
-	response.delete_cookie('name')
-	request.session.flush()
-	return response
+def movie_page1(request):
 
-
-def some_filters(request):
-	num_comments = Movies.objects.annotate(num_comments=Count('comments')).order_by('-num_comments')
-	avg_rating = Movies.objects.annotate(avg_rating=Avg('rates', default=1)).order_by('-avg_rating')
-
-	contex = {'num_comments': num_comments,
-	          'avg_rating': avg_rating}
-
-
-	return render(request, 'basic_site/home.html', contex)
-
-
+	a = Movies.objects.num_comments(2)
+	return HttpResponse(a.query)

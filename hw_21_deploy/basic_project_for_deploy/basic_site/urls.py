@@ -12,7 +12,8 @@ urlpatterns = [
 	path('movie_creation/', create_movie, name='movie_creation'),
 	path('login/', login_page, name='login'),
 	path('logout/', logout_page, name='logout'),
-	path('filters/', some_filters, name='filter')
+	path('filters/', some_filters, name='filter'),
+	path('movie_pave/', movie_page1, name='movie_pave'),
 
 ]
 

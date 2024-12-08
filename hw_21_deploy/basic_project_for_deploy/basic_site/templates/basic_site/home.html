@@ -7,13 +7,13 @@
 <body>
 <p>Home Page</p>
 
- {% if messages %}
-        <ul class="messages">
+{% if messages %}
+    <ul class="messages">
             {% for message in messages %}
                 <li class="alert {{ message.tags }}">{{ message }}</li>
             {% endfor %}
-        </ul>
-    {% endif %}
+    </ul>
+{% endif %}
 
 
 {% for i in  avg_rating %}

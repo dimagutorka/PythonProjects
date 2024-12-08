@@ -2,56 +2,57 @@
 
 
 {% block content %}
-    <ul>
-        <li>{{ movie.title }}       </li>
-        <li>{{ movie.release_date }}</li>
-        <li>{{ movie.country }}     </li>
-{#        <li>{{ movie.genres.get }}  </li>#}
 
-    </ul>
-    <ul>
-        {% for genre in genres_in_movie %}
-    <li>{{ genre.name }}</li>
-    {% endfor %}
-    
-    </ul>
+    <h1>Movie page</h1>
 
-    <img src="{{ movie.poster }}" alt="{{ movie.title }} Poster">
+    <div>
+        <ul>
+            <li>{{ movie.title }}           </li>
+            <li>{{ movie.release_date }}    </li>
+            <li>{{ movie.country | upper }} </li>
+
+            {% if avg_movie_rate %}
+                <p> Movie&apos;s rate {{ avg_movie_rate }} </p>
+            {% else %}
+                <li>Movie&apos;s rate: not enough rates to show the movie rating</li>
+            {% endif %}
+
+            {% for genre in genres_in_movie %}
+                <li>{{ genre.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <img src="{{ movie.poster }}" alt="{{ movie.title }} Poster">
+    </div>
 
 
-    <p>
-        {% if avg_movie_rate %}
-            <p> Movie&apos;s rate {{ avg_movie_rate }} </p>
-        {% else %}Movie&apos;s rate: not enough rates to show the movie rating{% endif %}
+    <div>
+        <form action="{% url 'movie' movie.id %}" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" name="comment_submit">Post the comment</button>
+        </form>
 
-
-    <form action="{% url 'movie' movie.id %}" enctype="multipart/form-data" method="POST">
-        {% csrf_token %}
-        {{ comment_form.as_p }}
-        <button type="submit" name="comment_submit">Post the comment</button>
-    </form>
-    
-    {% for com in comments %}
-        <p>{{ com.user.username }}: {{ com.content }} </p></p>
-    {% endfor %}
+        {% for com in comments %}
+            <p>{{ com.user.username }}: {{ com.content }} </p></p>
+        {% endfor %}
+    </div>
 
 
     <form action="{% url 'movie' movie.id %}" method="POST">
         {% csrf_token %}
-        {{ rate_form.as_p }}
+        {{ rate_form }}
         <button type="submit" name="rate_submit"> Submit Rating</button>
     </form>
-    
-    
+
+
     <h2>Recently viewed</h2>
-    
+
     <div class="container">
-    {% for movie in recently_viewed %}
-        <p>{{ movie.title }}</p>
-{#        <img src="{% url 'movie' movie.id %}" alt="">#}
-    {% endfor %}
-                
-    
+        {% for movie in recently_viewed %}
+            <p>{{ movie.title }}</p>
+            {#<img src="{% url 'movie' movie.id %}" alt="">#}
+        {% endfor %}
     </div>
 
 
