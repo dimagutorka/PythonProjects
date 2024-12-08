@@ -17,7 +17,9 @@ def calculate_avg_rate_after_creation(sender, instance, **kwargs):
 @receiver(post_delete, sender=Movies)
 @receiver(post_save, sender=Movies)
 def cache_refresh(sender, instance, **kwargs):
+	# CLEAR CACHE ????
 	print("Refreshing genres cache...")
 	all_genres = Genres.objects.prefetch_related('movies')
 	cache.set('genres', all_genres,  timeout=3600)
 	print("Refreshing genres cache is done!")
+
