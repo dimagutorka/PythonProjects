@@ -7,7 +7,7 @@ from django.core.cache import cache
 
 @receiver(post_delete, sender=Rate)
 @receiver(post_save, sender=Rate)
-def calculate_avg_rate_after_creation(sender, instance, **kwargs):
+def calculate_avg_rate_after_creation(instance, **kwargs):
 	movie = instance.movie
 	avg_rate = movie.rates.aggregate(Avg('rate'))['rate__avg']
 	movie.average_rating = avg_rate if avg_rate is not None else 0
@@ -16,7 +16,7 @@ def calculate_avg_rate_after_creation(sender, instance, **kwargs):
 
 @receiver(post_delete, sender=Movies)
 @receiver(post_save, sender=Movies)
-def cache_refresh(sender, instance, **kwargs):
+def cache_refresh(**kwargs):
 	# CLEAR CACHE ????
 	print("Refreshing genres cache...")
 	all_genres = Genres.objects.prefetch_related('movies')
