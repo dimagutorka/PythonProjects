@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e986ae3d-c601-41e4-b084-0176596fd4ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/28c36288-3a44-4c9c-939d-b3f5894c939d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28c36288-3a44-4c9c-939d-b3f5894c939d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/main/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/my_site/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/my_site/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/my_site/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/my_site/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/my_site/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/my_site/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/my_site/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/my_site/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/my_site/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/my_site/views.py" afterDir="false" />
@@ -72,7 +72,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.models">
+  <component name="RunManager" selected="Python.draft">
     <configuration name="draft" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hw_23_customization" />
       <option name="ENV_FILES" value="" />
@@ -145,8 +145,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.models" />
         <item itemvalue="Python.draft" />
+        <item itemvalue="Python.models" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +168,7 @@
       <updated>1733762894892</updated>
       <workItem from="1733762896359" duration="9036000" />
       <workItem from="1733816543007" duration="7178000" />
-      <workItem from="1733824545225" duration="3137000" />
+      <workItem from="1733824545225" duration="21819000" />
     </task>
     <servers />
   </component>
@@ -177,6 +177,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/hw_23_customization$models.coverage" NAME="models Coverage Results" MODIFIED="1733766547410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/my_site" />
-    <SUITE FILE_PATH="coverage/hw_23_customization$draft.coverage" NAME="draft Coverage Results" MODIFIED="1733766405642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw_23_customization$draft.coverage" NAME="draft Coverage Results" MODIFIED="1733848033988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

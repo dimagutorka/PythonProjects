@@ -1,0 +1,17 @@
+2024-12-10 18:15:34,244 INFO Watching for file changes with StatReloader
+2024-12-10 18:15:37,490 INFO "GET /home/ HTTP/1.1" 200 4
+2024-12-10 18:15:37,822 INFO "GET /home/ HTTP/1.1" 200 4
+2024-12-10 18:15:38,191 INFO "GET /home/ HTTP/1.1" 200 4
+2024-12-10 18:15:38,491 INFO "GET /home/ HTTP/1.1" 200 4
+2024-12-10 18:16:17,415 INFO Watching for file changes with StatReloader
+2024-12-10 18:16:23,277 INFO "GET /metrics/ HTTP/1.1" 200 1359
+2024-12-10 18:16:35,909 INFO "GET /home/ HTTP/1.1" 200 4
+2024-12-10 18:16:36,510 INFO "GET /home/ HTTP/1.1" 200 4
+2024-12-10 18:16:37,123 INFO "GET /home/ HTTP/1.1" 200 4
+2024-12-10 18:16:38,491 INFO "GET /metrics/ HTTP/1.1" 200 1490
+2024-12-10 18:16:54,176 INFO "GET /test/ HTTP/1.1" 200 2607
+2024-12-10 18:16:55,269 INFO "GET /test/ HTTP/1.1" 200 2607
+2024-12-10 18:16:56,152 INFO "GET /test/ HTTP/1.1" 200 2607
+2024-12-10 18:16:58,036 INFO "GET /metrics/ HTTP/1.1" 200 1622
+2024-12-10 18:18:09,821 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/views.py changed, reloading.
+2024-12-10 18:18:10,261 INFO Watching for file changes with StatReloader
