@@ -1,0 +1,33 @@
+{% load my_tags_and_filters %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>{{ "hello"|my_cut:"hello" }}</h1>
+<h2>{{ "<ul><li>HELLO</li></ul>"|lower }}</h2>
+
+{% current_time "%Y-%m-%d %I:%M %p" as the_time %}
+<p>The time is {{ the_time }}.</p>
+
+
+<h1>{{ products.name }}</h1>
+<h1>{{ categories.name }}</h1>
+
+
+
+<ul>
+    {% for header in request_headers %}
+    <li>{{ header }}</li>
+    {% endfor %}
+
+</ul>
+
+
+</body>
+</html>

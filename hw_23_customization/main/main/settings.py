@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'my_site',
+    # 'my_site.templatetags',
 
 ]
 
@@ -64,6 +65,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.utils.context_processor.categories',
+                'main.utils.context_processor.products',
+
             ],
         },
     },

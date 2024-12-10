@@ -2,7 +2,6 @@ from django.contrib import admin
 from my_site.models import *
 
 
-
 class CategoryAdmin(admin.ModelAdmin):
 	list_display = ("name",)
 	search_fields = ("name",)
