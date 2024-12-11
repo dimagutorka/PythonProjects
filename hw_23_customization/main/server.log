@@ -383,3 +383,4 @@ AttributeError: 'UserProfile' object has no attribute 'update'
 2024-12-11 09:11:04,169 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 2024-12-11 09:11:06,224 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 10269
 2024-12-11 09:11:06,260 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 17:00:26,576 INFO Watching for file changes with StatReloader

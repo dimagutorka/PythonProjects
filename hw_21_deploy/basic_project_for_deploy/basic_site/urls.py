@@ -14,6 +14,7 @@ urlpatterns = [
 	path('logout/', logout_page, name='logout'),
 	path('filters/', some_filters, name='filter'),
 	path('movie_pave/', movie_page1, name='movie_pave'),
+	path('test_celery/', test_celery, name='test_celery'),
 
 ]
 

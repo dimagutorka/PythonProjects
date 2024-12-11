@@ -9,7 +9,12 @@ from django.contrib import messages
 from basic_site.models import Genres, Movies, Rate
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from basic_site.tasks import test_func
 
+
+def test_celery(request):
+	test_func.delay()
+	return HttpResponse('OK')
 
 def update_user_profile(request):
 	if request.method == 'POST':
