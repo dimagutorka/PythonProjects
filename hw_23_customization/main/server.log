@@ -15,3 +15,371 @@
 2024-12-10 18:16:58,036 INFO "GET /metrics/ HTTP/1.1" 200 1622
 2024-12-10 18:18:09,821 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/views.py changed, reloading.
 2024-12-10 18:18:10,261 INFO Watching for file changes with StatReloader
+2024-12-11 07:53:36,196 INFO Watching for file changes with StatReloader
+2024-12-11 07:53:39,656 WARNING Not Found: /
+2024-12-11 07:53:39,658 WARNING "GET / HTTP/1.1" 404 3167
+2024-12-11 07:53:44,331 INFO "GET /admin/ HTTP/1.1" 200 8317
+2024-12-11 07:53:44,378 INFO "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+2024-12-11 07:53:44,386 INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+2024-12-11 07:53:44,389 INFO "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+2024-12-11 07:53:44,389 INFO "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+2024-12-11 07:53:44,390 INFO "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+2024-12-11 07:53:44,397 INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+2024-12-11 07:53:46,040 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 10100
+2024-12-11 07:53:46,085 INFO "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+2024-12-11 07:53:46,086 INFO "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+2024-12-11 07:53:46,086 INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+2024-12-11 07:53:46,086 INFO "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+2024-12-11 07:53:46,096 INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+2024-12-11 07:53:46,097 INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+2024-12-11 07:53:46,098 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:53:46,099 INFO "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+2024-12-11 07:53:46,101 INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+2024-12-11 07:53:46,102 INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+2024-12-11 07:53:46,107 INFO "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+2024-12-11 07:53:46,134 INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+2024-12-11 07:53:51,261 INFO "GET /admin/my_site/userprofile/4/change/ HTTP/1.1" 200 12107
+2024-12-11 07:53:51,302 INFO "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+2024-12-11 07:53:51,303 INFO "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+2024-12-11 07:53:51,304 INFO "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+2024-12-11 07:53:51,308 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:53:51,308 INFO "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+2024-12-11 07:53:51,309 INFO "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+2024-12-11 07:53:51,315 INFO "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+2024-12-11 07:53:51,315 INFO "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+2024-12-11 07:53:51,366 INFO "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+2024-12-11 07:54:04,608 INFO "POST /admin/my_site/userprofile/4/change/ HTTP/1.1" 302 0
+2024-12-11 07:54:04,625 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 10328
+2024-12-11 07:54:04,664 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:54:04,690 INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+2024-12-11 07:54:42,651 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 07:54:43,150 INFO Watching for file changes with StatReloader
+2024-12-11 07:54:45,212 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 10100
+2024-12-11 07:54:45,238 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:54:46,097 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 10100
+2024-12-11 07:54:46,116 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:54:56,939 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 10100
+2024-12-11 07:54:56,971 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:54:57,569 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 10100
+2024-12-11 07:54:57,589 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:54:57,957 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 10100
+2024-12-11 07:54:57,989 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:00,496 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 07:56:01,577 INFO Watching for file changes with StatReloader
+2024-12-11 07:56:04,761 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11637
+2024-12-11 07:56:04,848 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:07,396 INFO "GET /admin/my_site/userprofile/?user__id__exact=1 HTTP/1.1" 200 11095
+2024-12-11 07:56:07,456 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:08,337 INFO "GET /admin/my_site/userprofile/?user__id__exact=2 HTTP/1.1" 200 11095
+2024-12-11 07:56:08,370 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:08,985 INFO "GET /admin/my_site/userprofile/?user__id__exact=3 HTTP/1.1" 200 11095
+2024-12-11 07:56:09,020 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:09,802 INFO "GET /admin/my_site/userprofile/?user__id__exact=4 HTTP/1.1" 200 11095
+2024-12-11 07:56:09,839 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:11,826 INFO "GET /admin/my_site/userprofile/?birth_date__gte=2024-12-11&birth_date__lt=2024-12-12&user__id__exact=4 HTTP/1.1" 200 10670
+2024-12-11 07:56:11,865 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:12,285 INFO "GET /admin/my_site/userprofile/?birth_date__gte=2024-12-04&birth_date__lt=2024-12-12&user__id__exact=4 HTTP/1.1" 200 10670
+2024-12-11 07:56:12,321 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:12,802 INFO "GET /admin/my_site/userprofile/?birth_date__gte=2024-12-01&birth_date__lt=2025-01-01&user__id__exact=4 HTTP/1.1" 200 10670
+2024-12-11 07:56:12,839 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:13,470 INFO "GET /admin/my_site/userprofile/?birth_date__gte=2024-12-01&birth_date__lt=2025-01-01&user__id__exact=4 HTTP/1.1" 200 10670
+2024-12-11 07:56:13,489 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:13,913 INFO "GET /admin/my_site/userprofile/?birth_date__gte=2024-01-01&birth_date__lt=2025-01-01&user__id__exact=4 HTTP/1.1" 200 10670
+2024-12-11 07:56:13,947 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:14,469 INFO "GET /admin/my_site/userprofile/?birth_date__isnull=True&user__id__exact=4 HTTP/1.1" 200 11342
+2024-12-11 07:56:14,505 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:15,408 INFO "GET /admin/my_site/userprofile/?birth_date__isnull=False&user__id__exact=4 HTTP/1.1" 200 10446
+2024-12-11 07:56:15,442 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:16,872 INFO "GET /admin/my_site/userprofile/?birth_date__gte=2024-12-11&birth_date__lt=2024-12-12&user__id__exact=4 HTTP/1.1" 200 10670
+2024-12-11 07:56:16,909 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:17,254 INFO "GET /admin/my_site/userprofile/?user__id__exact=4 HTTP/1.1" 200 11095
+2024-12-11 07:56:17,288 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:20,951 INFO "GET /admin/my_site/userprofile/? HTTP/1.1" 200 11637
+2024-12-11 07:56:20,990 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 07:56:24,261 INFO "GET /admin/my_site/userprofile/? HTTP/1.1" 200 11637
+2024-12-11 07:56:24,285 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:01:13,725 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:01:14,367 INFO Watching for file changes with StatReloader
+2024-12-11 08:07:42,821 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:07:44,060 INFO Watching for file changes with StatReloader
+2024-12-11 08:08:47,980 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:08:48,438 INFO Watching for file changes with StatReloader
+2024-12-11 08:09:20,256 INFO "GET /admin/my_site/userprofile/? HTTP/1.1" 200 11637
+2024-12-11 08:09:20,302 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:12:49,840 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:12:51,220 INFO Watching for file changes with StatReloader
+2024-12-11 08:12:53,704 INFO "GET /admin/my_site/userprofile/? HTTP/1.1" 200 11637
+2024-12-11 08:12:53,860 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:12:54,414 INFO "GET /admin/my_site/userprofile/? HTTP/1.1" 200 11637
+2024-12-11 08:12:54,455 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:13:07,906 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11637
+2024-12-11 08:13:07,971 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:13:08,519 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11637
+2024-12-11 08:13:08,539 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:13:08,676 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11637
+2024-12-11 08:13:08,695 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:13:33,093 INFO Watching for file changes with StatReloader
+2024-12-11 08:13:35,855 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11637
+2024-12-11 08:13:35,906 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:13:36,471 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11637
+2024-12-11 08:13:36,491 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:13:59,771 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:14:01,143 INFO Watching for file changes with StatReloader
+2024-12-11 08:14:26,900 INFO Watching for file changes with StatReloader
+2024-12-11 08:14:30,494 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:14:30,587 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:14:39,406 INFO "POST /admin/my_site/userprofile/ HTTP/1.1" 302 0
+2024-12-11 08:14:39,436 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:14:39,463 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:14:40,555 INFO "GET /admin/my_site/userprofile/4/change/ HTTP/1.1" 200 12107
+2024-12-11 08:14:40,592 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:14:42,267 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:14:43,331 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:14:43,364 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:14:43,941 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:14:44,392 INFO "GET /admin/my_site/userprofile/2/change/ HTTP/1.1" 200 12079
+2024-12-11 08:14:44,432 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:14:45,143 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:14:46,250 INFO "GET /admin/my_site/userprofile/1/change/ HTTP/1.1" 200 12079
+2024-12-11 08:14:46,284 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:14:48,257 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:14:49,936 INFO "GET /admin/my_site/userprofile/1/change/ HTTP/1.1" 200 12079
+2024-12-11 08:14:49,976 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:14:58,081 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:15:01,755 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:15:01,795 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:15:05,319 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:15:39,731 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:15:39,798 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:15:40,177 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:15:40,574 INFO Watching for file changes with StatReloader
+2024-12-11 08:16:40,704 INFO Watching for file changes with StatReloader
+2024-12-11 08:16:43,270 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:16:43,373 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:16:44,257 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:16:44,325 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:16:45,948 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:16:50,188 ERROR Internal Server Error: /admin/my_site/userprofile/
+Traceback (most recent call last):
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2034, in changelist_view
+    response = self.response_action(
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1666, in response_action
+    response = func(self, request, queryset)
+  File "/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py", line 14, in test
+    query.update(phone='+385544332211')
+AttributeError: 'UserProfile' object has no attribute 'update'
+2024-12-11 08:16:50,190 ERROR "POST /admin/my_site/userprofile/ HTTP/1.1" 500 115446
+2024-12-11 08:17:37,943 INFO Watching for file changes with StatReloader
+2024-12-11 08:17:39,240 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:17:40,912 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:17:40,954 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:17:59,906 WARNING Not Found: /
+2024-12-11 08:17:59,908 WARNING "GET / HTTP/1.1" 404 3167
+2024-12-11 08:18:03,394 INFO "GET /admin/ HTTP/1.1" 200 8694
+2024-12-11 08:18:04,905 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:18:04,947 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:16,277 INFO "POST /admin/my_site/userprofile/ HTTP/1.1" 302 0
+2024-12-11 08:18:16,302 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:18:16,327 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:17,585 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:18:17,620 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:18,932 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:18:20,304 INFO "GET /admin/my_site/userprofile/2/change/ HTTP/1.1" 200 12079
+2024-12-11 08:18:20,339 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:21,672 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:18:22,357 INFO "GET /admin/my_site/userprofile/1/change/ HTTP/1.1" 200 12079
+2024-12-11 08:18:22,392 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:23,097 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:18:23,875 INFO "GET /admin/my_site/userprofile/4/change/ HTTP/1.1" 200 12107
+2024-12-11 08:18:23,912 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:25,044 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:18:25,942 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:18:25,978 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:27,907 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:18:28,658 INFO "GET /admin/my_site/userprofile/2/change/ HTTP/1.1" 200 12079
+2024-12-11 08:18:28,693 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:36,514 INFO "POST /admin/my_site/userprofile/2/change/ HTTP/1.1" 302 0
+2024-12-11 08:18:36,535 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11976
+2024-12-11 08:18:36,577 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:37,304 INFO "GET /admin/my_site/userprofile/4/change/ HTTP/1.1" 200 12107
+2024-12-11 08:18:37,335 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:40,786 INFO "POST /admin/my_site/userprofile/4/change/ HTTP/1.1" 302 0
+2024-12-11 08:18:40,810 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11976
+2024-12-11 08:18:40,846 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:41,542 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:18:41,574 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:45,267 INFO "POST /admin/my_site/userprofile/3/change/ HTTP/1.1" 302 0
+2024-12-11 08:18:45,316 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11976
+2024-12-11 08:18:45,415 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:46,186 INFO "GET /admin/my_site/userprofile/1/change/ HTTP/1.1" 200 12079
+2024-12-11 08:18:46,279 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:54,240 INFO "POST /admin/my_site/userprofile/1/change/ HTTP/1.1" 302 0
+2024-12-11 08:18:54,264 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11976
+2024-12-11 08:18:54,320 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:55,602 INFO "GET /admin/my_site/userprofile/1/change/ HTTP/1.1" 200 12101
+2024-12-11 08:18:55,638 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:18:56,195 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:19:12,441 INFO Watching for file changes with StatReloader
+2024-12-11 08:19:15,721 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:19:15,751 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:19:19,648 INFO "POST /admin/my_site/userprofile/ HTTP/1.1" 302 0
+2024-12-11 08:19:19,669 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:19:19,692 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:19:21,185 INFO "GET /admin/my_site/userprofile/1/change/ HTTP/1.1" 200 12101
+2024-12-11 08:19:21,227 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:19:22,188 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:19:22,719 INFO "GET /admin/my_site/userprofile/2/change/ HTTP/1.1" 200 12101
+2024-12-11 08:19:22,754 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:19:23,292 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:19:23,794 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:19:23,827 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:19:24,334 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:19:24,805 INFO "GET /admin/my_site/userprofile/4/change/ HTTP/1.1" 200 12107
+2024-12-11 08:19:24,840 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:19:25,479 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:25:30,256 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:25:30,695 INFO Watching for file changes with StatReloader
+2024-12-11 08:26:06,313 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:26:06,769 INFO Watching for file changes with StatReloader
+2024-12-11 08:26:30,252 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:26:31,138 INFO Watching for file changes with StatReloader
+2024-12-11 08:27:01,679 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:27:02,081 INFO Watching for file changes with StatReloader
+2024-12-11 08:27:34,747 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:27:35,148 INFO Watching for file changes with StatReloader
+2024-12-11 08:27:46,474 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:27:47,741 INFO Watching for file changes with StatReloader
+2024-12-11 08:27:53,075 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:27:53,451 INFO Watching for file changes with StatReloader
+2024-12-11 08:28:06,765 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:28:07,149 INFO Watching for file changes with StatReloader
+2024-12-11 08:29:51,486 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11637
+2024-12-11 08:29:51,522 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:30:02,246 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:30:02,851 INFO Watching for file changes with StatReloader
+2024-12-11 08:30:08,038 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:30:08,371 INFO Watching for file changes with StatReloader
+2024-12-11 08:30:15,191 INFO "POST /admin/my_site/userprofile/ HTTP/1.1" 302 0
+2024-12-11 08:30:15,253 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11903
+2024-12-11 08:30:15,276 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:30:15,297 INFO "GET /static/admin/img/icon-alert.svg HTTP/1.1" 304 0
+2024-12-11 08:30:15,929 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:30:15,957 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:30:22,090 INFO "POST /admin/my_site/userprofile/ HTTP/1.1" 302 0
+2024-12-11 08:30:22,115 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11860
+2024-12-11 08:30:22,142 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:30:45,217 INFO Watching for file changes with StatReloader
+2024-12-11 08:30:47,345 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:30:47,642 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:30:50,883 INFO "POST /admin/my_site/userprofile/ HTTP/1.1" 302 0
+2024-12-11 08:30:50,907 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11835
+2024-12-11 08:30:50,926 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:30:57,530 INFO "POST /admin/my_site/userprofile/ HTTP/1.1" 302 0
+2024-12-11 08:30:57,554 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11857
+2024-12-11 08:30:57,583 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:32:03,690 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11710
+2024-12-11 08:34:20,450 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:34:20,869 INFO Watching for file changes with StatReloader
+2024-12-11 08:34:23,564 INFO Watching for file changes with StatReloader
+2024-12-11 08:34:28,694 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:34:28,720 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:34:35,463 INFO "GET /admin/my_site/userprofile/4/change/ HTTP/1.1" 200 12107
+2024-12-11 08:34:35,502 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:34:40,974 INFO "POST /admin/my_site/userprofile/4/change/ HTTP/1.1" 302 0
+2024-12-11 08:34:41,000 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11976
+2024-12-11 08:34:41,039 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:34:41,957 INFO "GET /admin/my_site/userprofile/3/change/ HTTP/1.1" 200 12105
+2024-12-11 08:34:41,992 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:34:44,503 INFO "POST /admin/my_site/userprofile/3/change/ HTTP/1.1" 302 0
+2024-12-11 08:34:44,529 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11976
+2024-12-11 08:34:44,569 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:34:48,532 INFO "POST /admin/my_site/userprofile/ HTTP/1.1" 302 0
+2024-12-11 08:34:48,555 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11998
+2024-12-11 08:34:48,579 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:49:19,200 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:49:19,865 INFO Watching for file changes with StatReloader
+2024-12-11 08:53:34,777 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:53:35,608 INFO Watching for file changes with StatReloader
+2024-12-11 08:55:22,378 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:55:23,364 INFO Watching for file changes with StatReloader
+2024-12-11 08:55:56,312 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:55:56,849 INFO Watching for file changes with StatReloader
+2024-12-11 08:57:01,206 INFO Watching for file changes with StatReloader
+2024-12-11 08:57:04,623 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:57:04,753 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:57:05,651 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 11748
+2024-12-11 08:57:05,722 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:57:21,587 INFO Watching for file changes with StatReloader
+2024-12-11 08:57:23,407 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 12182
+2024-12-11 08:57:23,503 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:57:24,736 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 9841
+2024-12-11 08:57:24,795 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:57:26,242 INFO "GET /admin/my_site/category/2/change/ HTTP/1.1" 200 28548
+2024-12-11 08:57:26,287 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:57:26,288 INFO "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+2024-12-11 08:57:26,331 INFO "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 560
+2024-12-11 08:58:23,288 INFO "POST /admin/my_site/category/2/change/ HTTP/1.1" 302 0
+2024-12-11 08:58:23,305 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 10059
+2024-12-11 08:58:23,356 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:58:26,351 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 9841
+2024-12-11 08:58:26,373 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:59:19,801 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 08:59:21,871 INFO Watching for file changes with StatReloader
+2024-12-11 08:59:32,064 INFO Watching for file changes with StatReloader
+2024-12-11 08:59:34,041 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 10269
+2024-12-11 08:59:34,070 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:59:35,305 INFO "GET /admin/my_site/product/ HTTP/1.1" 200 13725
+2024-12-11 08:59:35,411 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 08:59:35,412 INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+2024-12-11 08:59:38,577 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 10269
+2024-12-11 09:04:31,591 INFO "GET /admin/my_site/product/ HTTP/1.1" 200 13725
+2024-12-11 09:04:31,636 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:04:32,879 INFO "GET /admin/my_site/product/8/change/ HTTP/1.1" 200 12660
+2024-12-11 09:04:32,920 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:04:40,255 INFO "GET /admin/my_site/category/2/change/?_to_field=id HTTP/1.1" 200 41325
+2024-12-11 09:04:40,297 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:04:42,294 INFO "GET /admin/my_site/product/8/change/ HTTP/1.1" 200 12660
+2024-12-11 09:04:43,382 INFO "GET /admin/my_site/category/add/?_to_field=id&_popup=1 HTTP/1.1" 200 18647
+2024-12-11 09:04:43,428 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:04:46,866 INFO "GET /admin/my_site/category/2/change/?_to_field=id&_popup=1 HTTP/1.1" 200 35923
+2024-12-11 09:04:46,905 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:08:58,196 INFO /Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_23_customization/main/my_site/admin.py changed, reloading.
+2024-12-11 09:08:59,174 INFO Watching for file changes with StatReloader
+2024-12-11 09:09:03,799 INFO "GET /admin/my_site/product/ HTTP/1.1" 200 13725
+2024-12-11 09:09:03,854 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:09:04,543 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 12610
+2024-12-11 09:09:04,580 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:09:05,120 INFO "GET /admin/my_site/product/ HTTP/1.1" 200 13725
+2024-12-11 09:09:05,158 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:09:05,622 INFO "GET /admin/my_site/userprofile/ HTTP/1.1" 200 12610
+2024-12-11 09:09:05,655 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:09:07,410 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 10269
+2024-12-11 09:09:07,450 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:11:01,070 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 10269
+2024-12-11 09:11:01,112 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:11:01,971 INFO "GET /admin/my_site/category/1/change/ HTTP/1.1" 200 26531
+2024-12-11 09:11:02,003 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:11:04,132 INFO "GET /admin/my_site/product/ HTTP/1.1" 200 13725
+2024-12-11 09:11:04,169 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2024-12-11 09:11:06,224 INFO "GET /admin/my_site/category/ HTTP/1.1" 200 10269
+2024-12-11 09:11:06,260 INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
