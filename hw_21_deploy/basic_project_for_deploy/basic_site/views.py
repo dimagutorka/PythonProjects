@@ -1,20 +1,23 @@
+from time import sleep
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
-from django.db import connection
 from django.http import HttpResponse
 from django.db.models import Avg, Count
 from django.shortcuts import render, redirect, get_object_or_404
-from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm
+from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm
 from django.contrib import messages
 from basic_site.models import Genres, Movies, Rate
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
-from basic_site.tasks import test_func
+from basic_site.tasks import test_func, from_csvfile_to_bd
+
 
 
 def test_celery(request):
 	test_func.delay()
 	return HttpResponse('OK')
+
 
 def update_user_profile(request):
 	if request.method == 'POST':
@@ -44,6 +47,8 @@ def create_movie(request):
 
 	if request.method == 'POST':
 		form = MovieForm(request.POST, request.FILES)
+		a = request.FILES['poster']
+		print(f'Request: {a}')
 
 		if form.is_valid():
 			form.save()
@@ -188,6 +193,7 @@ def some_filters(request):
 
 
 def home(request):
+
 	username = request.COOKIES.get('name')
 	age = request.session.get('age')
 
@@ -201,6 +207,23 @@ def home(request):
 
 
 def movie_page1(request):
-
 	a = Movies.objects.num_comments(2)
 	return HttpResponse(a.query)
+
+
+def create_movie_via_csv(request):
+	if request.method == 'POST':
+		form = CSVFileForm(request.POST, request.FILES)
+
+		if form.is_valid():
+			csv_file_instance = form.save()
+			messages.success(request, 'Your movie has been created')
+
+			filename = csv_file_instance.csv_filename.name
+			from_csvfile_to_bd.delay(filename)
+
+			return redirect('home')
+	else:
+		form = CSVFileForm()
+	return render(request, 'basic_site/movie_creation_via_csv.html', {"form": form})
+

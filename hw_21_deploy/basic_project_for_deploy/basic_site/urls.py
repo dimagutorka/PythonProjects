@@ -15,6 +15,7 @@ urlpatterns = [
 	path('filters/', some_filters, name='filter'),
 	path('movie_pave/', movie_page1, name='movie_pave'),
 	path('test_celery/', test_celery, name='test_celery'),
+	path('create_movie_via_csv/', create_movie_via_csv, name='create_movie_via_csv'),
 
 ]
 

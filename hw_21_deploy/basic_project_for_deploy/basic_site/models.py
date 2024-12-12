@@ -81,4 +81,10 @@ class Rate(models.Model):
 		unique_together = ('user', 'movie')
 
 
+class FileCSV(models.Model):
+	csv_filename = models.FileField(upload_to='movie_csv/', blank=True, null=True)
+
+
+
+
 

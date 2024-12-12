@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from basic_site.models import UserProfile, Movies, Comments, Rate
+from basic_site.models import UserProfile, Movies, Comments, Rate, FileCSV
 
 
 class UserProfileForm(forms.ModelForm):
@@ -43,6 +43,12 @@ class RateForm(forms.ModelForm):
 	class Meta:
 		model = Rate
 		fields = ['rate']
+
+
+class CSVFileForm(forms.ModelForm):
+	class Meta:
+		model = FileCSV
+		fields = ['csv_filename']
 
 
 

@@ -1,0 +1,21 @@
+{% extends 'basic.html' %}
+
+
+{% block content %}
+<form action="{% url 'create_movie_via_csv' %}" enctype="multipart/form-data" method="POST" novalidate>
+    {% csrf_token %}
+
+
+{% for field in form %}
+    {% if field.errors %}
+        {% for error in field.errors %}
+        {{ error }}
+        {% endfor %}
+    {% endif %}
+        {{ field.label_tag }} {{field}}
+{% endfor %}
+    <input type="submit" value="Create movie">
+
+</form>
+{% endblock %}
+
