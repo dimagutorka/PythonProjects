@@ -10,11 +10,10 @@ urlpatterns = [
 	path('genre/<int:genre_id>/', genre_page_view, name='genre'),
 	path('movie/<int:movie_id>', movie_page_view, name='movie'),
 	path('movie_creation/', create_movie, name='movie_creation'),
-	path('login/', login_page, name='login'),
-	path('logout/', logout_page, name='logout'),
+	path('registration_page/', registration_view, name='registration_page'),
+	path('login_page/', login_view, name='login_page'),
+	path('logout/', logout_view, name='logout'),
 	path('filters/', some_filters, name='filter'),
-	path('movie_pave/', movie_page1, name='movie_pave'),
-	path('test_celery/', test_celery, name='test_celery'),
 	path('create_movie_via_csv/', create_movie_via_csv, name='create_movie_via_csv'),
 
 ]

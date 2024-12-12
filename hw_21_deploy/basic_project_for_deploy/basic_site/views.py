@@ -1,22 +1,13 @@
-from time import sleep
+from basic_site.models import Genres, Movies, Rate
+from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm, RegistrationForm, LoginForm
+from basic_site.tasks import from_csvfile_to_bd
 
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponse
 from django.db.models import Avg, Count
 from django.shortcuts import render, redirect, get_object_or_404
-from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm
 from django.contrib import messages
-from basic_site.models import Genres, Movies, Rate
-from django.views.decorators.cache import cache_page
 from django.core.cache import cache
-from basic_site.tasks import test_func, from_csvfile_to_bd
-
-
-
-def test_celery(request):
-	test_func.delay()
-	return HttpResponse('OK')
+from django.contrib.auth import login, authenticate, logout
 
 
 def update_user_profile(request):
@@ -160,27 +151,6 @@ def movie_page_view(request, movie_id):
 	return render(request, 'basic_site/movie_page.html', context)
 
 
-def login_page(request):
-	if request.method == 'POST':
-		name = request.POST.get('name')
-		age = request.POST.get('age')
-
-		response = redirect('home')
-		response.set_cookie('name', name, max_age=30)
-		request.session['age'] = age
-
-		return response
-
-	return render(request, 'basic_site/login_page.html')
-
-
-def logout_page(request):
-	response = redirect('home')
-	response.delete_cookie('name')
-	request.session.flush()
-	return response
-
-
 # move to the utils.py
 def some_filters(request):
 	num_comments = Movies.objects.annotate(num_comments=Count('comments')).order_by('-num_comments')
@@ -191,24 +161,6 @@ def some_filters(request):
 
 	return render(request, 'basic_site/home.html', contex)
 
-
-def home(request):
-
-	username = request.COOKIES.get('name')
-	age = request.session.get('age')
-
-	if not username or not age:
-		return redirect('login')
-
-	response = HttpResponse(f'Hello, {username}! you\'re age is {age}')
-	response.set_cookie('name', username, max_age=30)
-
-	return response
-
-
-def movie_page1(request):
-	a = Movies.objects.num_comments(2)
-	return HttpResponse(a.query)
 
 
 def create_movie_via_csv(request):
@@ -227,3 +179,89 @@ def create_movie_via_csv(request):
 		form = CSVFileForm()
 	return render(request, 'basic_site/movie_creation_via_csv.html', {"form": form})
 
+
+def registration_view(request):
+	if request.method == 'POST':
+		form = RegistrationForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			request.session['username'] = user.username
+
+			return redirect('home')
+
+	else:
+		form = RegistrationForm()
+	return render(request, 'basic_site/registration_page.html', {'form': form})
+
+
+def login_view(request):
+
+	form = LoginForm()
+	context = {'form': form}
+
+	if request.method == 'POST':
+		username = request.POST.get('username', None)
+		password = request.POST.get('password', None)
+		user = authenticate(request, username=username, password=password)
+
+		if user is None:
+			context = {'form': form, 'error': 'Invalid username or password.'}
+
+		request.session['username'] = username
+		login(request, user)
+
+		return redirect('home')
+
+	return render(request, 'basic_site/login_page.html', context)
+
+
+def logout_view(request):
+	logout(request)
+	request.session.flush()
+	return redirect('home')
+
+
+def home(request):
+	username = 'Guest'
+	if 'username' in request.session:
+		username = request.session['username']
+
+	return render(request, 'basic_site/home.html', {'username': username})
+
+
+# HW 22 PS It's inactive because I already have full-fledged login/logout system, it's just for HW
+
+# def login_page_for_hw(request):
+# 	if request.method == 'POST':
+# 		name = request.POST.get('name')
+# 		age = request.POST.get('age')
+#
+# 		response = redirect('home')
+# 		response.set_cookie('name', name, max_age=30)
+# 		request.session['age'] = age
+#
+# 		return response
+#
+# 	return render(request, 'basic_site/login_page.html')
+#
+#
+# def login_page_for_hw(request):
+# 	response = redirect('home')
+# 	response.delete_cookie('name')
+# 	request.session.flush()
+# 	return response
+
+#
+# def home(request):
+#
+# 	username = request.COOKIES.get('name')
+# 	age = request.session.get('age')
+#
+# 	if not username or not age:
+# 		return redirect('login')
+#
+# 	response = HttpResponse(f'Hello, {username}! you\'re age is {age}')
+# 	response.set_cookie('name', username, max_age=30)
+#
+# 	return response

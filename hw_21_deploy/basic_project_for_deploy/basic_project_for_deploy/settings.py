@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import sys
 from pathlib import Path
+sys.path.append('/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_21_deploy')
+
+from gmail_apppass_for_django import app_pass
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -156,3 +161,11 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 # CELERY_RESULT_BACKEND = 'django-db'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'dhutorka@gmail.com'
+EMAIL_HOST_PASSWORD = app_pass
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

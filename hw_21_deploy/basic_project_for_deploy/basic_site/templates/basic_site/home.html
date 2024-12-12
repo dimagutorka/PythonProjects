@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>Home Page</p>
+{% extends 'basic.html' %}
 
+{% block content %}
+    
+    <h1>Hello {{ username }}</h1>
 {% if messages %}
     <ul class="messages">
-            {% for message in messages %}
-                <li class="alert {{ message.tags }}">{{ message }}</li>
-            {% endfor %}
+        {% for message in messages %}
+            <li class="alert {{ message.tags }}">{{ message }}</li>
+        {% endfor %}
     </ul>
 {% endif %}
-
-
-{% for i in  avg_rating %}
-<p>{{ i.title }} {{ i.avg_rating }}</p>
+    
+    {% for i in  avg_rating %}
+    <p>{{ i.title }} {{ i.avg_rating }}</p>
 {% endfor %}
+    
+    
+{% endblock %}
 
-</body>
-</html>
+
+
+
+
+

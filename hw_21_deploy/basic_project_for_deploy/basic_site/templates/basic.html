@@ -8,16 +8,34 @@
 
 <body>
 
+<div id="navbar">
+    {% block navbar %}
+        <h1>Name </h1>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}"> Home </a></li>
+                <li><a href="{% url 'registration_page' %}"> Registration </a></li>
+                <li><a href="{% url 'login_page' %}"> Log In </a></li>
+                <li><a href="{% url 'logout' %}"> Exit </a></li>
+
+
+            </ul>
+
+        </nav>
+    {% endblock %}
+</div>
+
 <div id="sidebar">
     {% block sidebar %}
-        
+
     {% endblock %}
 </div>
 
 
 <div id="content">
     {% block content %}
-        
+
     {% endblock %}
 </div>
 
