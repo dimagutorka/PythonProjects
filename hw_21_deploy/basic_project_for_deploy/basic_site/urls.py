@@ -16,6 +16,7 @@ urlpatterns = [
 	path('filters/', some_filters, name='filter'),
 	path('create_movie_via_csv/', create_movie_via_csv, name='create_movie_via_csv'),
 
+
 ]
 
 if settings.DEBUG:

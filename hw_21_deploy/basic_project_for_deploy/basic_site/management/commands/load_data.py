@@ -10,7 +10,7 @@ class Command(BaseCommand):
 	headers = {"accept": "application/json", "Authorization": token}
 
 	url_to_genres = "https://api.themoviedb.org/3/genre/movie/list?language=en"
-	url_to_movies = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=3&sort_by=popularity.desc"
+	url_to_movies = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc"
 
 	def add_arguments(self, parser):
 		parser.add_argument(
@@ -62,4 +62,4 @@ class Command(BaseCommand):
 			genre = Genres.objects.create(name=i['name'])
 			genre.save()
 
-		self.stdout.srite(self.style.SUCCESS('Genres loaded successfully'))
+		self.stdout.write(self.style.SUCCESS('Genres loaded successfully'))

@@ -17,7 +17,7 @@ class UserProfileForm(forms.ModelForm):
 
 class UserForm(forms.ModelForm):
 	class Meta:
-		model = get_user_model() # == User
+		model = get_user_model()  # == User
 		fields = ['last_name', 'first_name', 'email']
 
 

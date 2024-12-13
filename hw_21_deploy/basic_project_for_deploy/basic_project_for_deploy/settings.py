@@ -13,7 +13,6 @@ import os
 import sys
 from pathlib import Path
 sys.path.append('/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_21_deploy')
-
 from gmail_apppass_for_django import app_pass
 
 
@@ -44,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'basic_site',
     "debug_toolbar",
-
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

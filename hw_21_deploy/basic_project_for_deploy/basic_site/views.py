@@ -1,8 +1,8 @@
+from django.contrib.auth.decorators import login_required
+
 from basic_site.models import Genres, Movies, Rate
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm, RegistrationForm, LoginForm
 from basic_site.tasks import from_csvfile_to_bd
-
-from django.http import HttpResponse
 from django.db.models import Avg, Count
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
@@ -10,8 +10,10 @@ from django.core.cache import cache
 from django.contrib.auth import login, authenticate, logout
 
 
+@login_required(login_url='no_account')
 def update_user_profile(request):
 	if request.method == 'POST':
+
 		form_user = UserForm(request.POST, instance=request.user)
 		form_userprofile = UserProfileForm(request.POST, request.FILES, instance=request.user.profile)
 
@@ -160,7 +162,6 @@ def some_filters(request):
 	          'avg_rating': avg_rating}
 
 	return render(request, 'basic_site/home.html', contex)
-
 
 
 def create_movie_via_csv(request):
