@@ -1,5 +1,4 @@
 from django.contrib.auth.decorators import login_required
-
 from basic_site.models import Genres, Movies, Rate
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm, RegistrationForm, LoginForm
 from basic_site.tasks import from_csvfile_to_bd
@@ -167,18 +166,21 @@ def some_filters(request):
 def create_movie_via_csv(request):
 	if request.method == 'POST':
 		form = CSVFileForm(request.POST, request.FILES)
+		context = {"form": form}
 
 		if form.is_valid():
 			csv_file_instance = form.save()
 			messages.success(request, 'Your movie has been created')
 
 			filename = csv_file_instance.csv_filename.name
-			from_csvfile_to_bd.delay(filename)
+			result = from_csvfile_to_bd.delay(filename)
 
-			return redirect('home')
+			context['task_id'] = result.task_id
+			# return redirect('home')
 	else:
 		form = CSVFileForm()
-	return render(request, 'basic_site/movie_creation_via_csv.html', {"form": form})
+		context = {"form": form}
+	return render(request, 'basic_site/movie_creation_via_csv.html', context )
 
 
 def registration_view(request):
@@ -219,7 +221,7 @@ def login_view(request):
 
 def logout_view(request):
 	logout(request)
-	request.session.flush()
+	# request.session.flush()
 	return redirect('home')
 
 

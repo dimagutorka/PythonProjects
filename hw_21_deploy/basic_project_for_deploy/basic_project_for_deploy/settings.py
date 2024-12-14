@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'basic_site',
     "debug_toolbar",
-    'django_extensions',
+    'celery_progress',
+    'django_celery_results'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -154,12 +156,13 @@ INTERNAL_IPS = [
 
 # CELERY CONFIGURATION
 
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379/1'
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
-# CELERY_RESULT_BACKEND = 'django-db'
 
 
 EMAIL_HOST = 'smtp.gmail.com'

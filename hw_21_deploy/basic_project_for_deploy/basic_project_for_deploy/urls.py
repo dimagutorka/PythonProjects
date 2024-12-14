@@ -7,5 +7,7 @@ from basic_site.api import api
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('basic_site.urls')),
-    path('api/', api.urls)
+    path('api/', api.urls),
+    path(r'^celery-progress/', include('celery_progress.urls')),
+
 ] + debug_toolbar_urls()
