@@ -15,6 +15,7 @@ urlpatterns = [
 	path('logout/', logout_view, name='logout'),
 	path('filters/', some_filters, name='filter'),
 	path('create_movie_via_csv/', create_movie_via_csv, name='create_movie_via_csv'),
+	path('profile', profile, name='profile'),
 
 
 ]

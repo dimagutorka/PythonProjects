@@ -2,7 +2,16 @@
 
 
 {% block content %}
+    
 
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    
     <form method="POST" action="{% url 'login_page' %}">
         {% csrf_token %}
         {{ form.as_p }}

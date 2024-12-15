@@ -18,21 +18,18 @@ def calculate_avg_rate_after_creation(instance, **kwargs):
     movie.save()
 
 
-@receiver(post_delete, sender=Movies)
-@receiver(post_save, sender=Movies)
-def cache_refresh(**kwargs):
-    # CLEAR CACHE ????
-    print("Refreshing genres cache...")
-    all_genres = Genres.objects.prefetch_related("movies")
-    cache.set("genres", all_genres, timeout=3600)
-    print("Refreshing genres cache is done!")
+# @receiver(post_delete, sender=Movies)
+# @receiver(post_save, sender=Movies)
+# def cache_refresh(**kwargs):
+#     # CLEAR CACHE ????
+#     print("Refreshing movies cache...")
+#     all_genres = Genres.objects.prefetch_related("movies")
+#     cache.set("genres", all_genres, timeout=3600)
+#     print("Refreshing movies cache is done!")
 
 
 @receiver(post_save, sender=User)
 def user_registration_email(sender, instance, created, **kwargs):
-
-    if hasattr(instance, "_email_sent"):
-        return
 
     subject = f"Hello from our site!"
     recipient_list = ["dhutorka@gmail.com", "dgutorka@gmail.com"]

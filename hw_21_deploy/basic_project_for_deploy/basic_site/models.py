@@ -21,6 +21,7 @@ class UserProfile(models.Model):
 	bio = models.TextField(max_length=500, blank=True)
 	birth_date = models.DateField(null=True, blank=True)
 	avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
+	age = models.PositiveIntegerField(null=True, blank=True)
 
 	def __str__(self):
 		return self.user.username
@@ -34,7 +35,7 @@ class Genres(models.Model):
 
 
 class Movies(models.Model):
-	title = models.CharField(max_length=100, unique=True, db_index=True)
+	title = models.CharField(max_length=100, unique=True, db_index=True)  # unique=True is just for more convenient debug
 	overview = models.TextField(max_length=500, blank=True) #NEW
 	release_date = models.DateField(null=True, blank=True)
 	country = models.CharField(max_length=100)

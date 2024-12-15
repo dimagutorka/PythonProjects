@@ -1,4 +1,6 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+
 from basic_site.models import Genres, Movies, Rate
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm, RegistrationForm, LoginForm
 from basic_site.tasks import from_csvfile_to_bd
@@ -54,14 +56,14 @@ def create_movie(request):
 
 # @cache_page(60*1)
 def genres_page_view(request):
-	all_genres = cache.get('genres')
-
-	if all_genres is None:
-		all_genres = Genres.objects.prefetch_related('movies')
-		cache.set('genres', all_genres, timeout=3600)
-		print('hit the db')
-	else:
-		print('hit the cache')
+	# all_genres = cache.get('genres')
+	#
+	# if all_genres is None:
+	all_genres = Genres.objects.prefetch_related('movies')
+	# 	cache.set('genres', all_genres, timeout=3600)
+	# 	print('hit the db')
+	# else:
+	# 	print('hit the cache')
 
 	num_comments = (Movies.objects.prefetch_related('genres')
 	                .annotate(num_comments=Count('comments'))
@@ -163,6 +165,7 @@ def some_filters(request):
 	return render(request, 'basic_site/home.html', contex)
 
 
+@login_required(login_url='/login_page/')
 def create_movie_via_csv(request):
 	if request.method == 'POST':
 		form = CSVFileForm(request.POST, request.FILES)
@@ -199,6 +202,9 @@ def registration_view(request):
 
 
 def login_view(request):
+	next_url = request.GET.get('next')
+	if next_url:
+		messages.warning(request, 'You need no log in before accessing the Log out page.')
 
 	form = LoginForm()
 	context = {'form': form}
@@ -219,6 +225,7 @@ def login_view(request):
 	return render(request, 'basic_site/login_page.html', context)
 
 
+@login_required(login_url='/login_page/')
 def logout_view(request):
 	logout(request)
 	# request.session.flush()
@@ -229,11 +236,16 @@ def home(request):
 	username = 'Guest'
 	if 'username' in request.session:
 		username = request.session['username']
-
 	return render(request, 'basic_site/home.html', {'username': username})
 
 
-# HW 22 PS It's inactive because I already have full-fledged login/logout system, it's just for HW
+@login_required(login_url='/login_page/')
+def profile(request):
+	user_data = User.objects.select_related('profile').get(id=request.user.id)
+	return render(request, 'basic_site/user_profile.html', {'user_data': user_data})
+
+	
+# HW 22 PS This part of code is inactive because I already have full-fledged login/logout system, it's just for HW
 
 # def login_page_for_hw(request):
 # 	if request.method == 'POST':
