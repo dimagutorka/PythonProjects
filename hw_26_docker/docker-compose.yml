@@ -1,11 +1,12 @@
-#version: "3.8"
 services:
   app:
     build: .
     volumes:
       - .:/django
     ports:
-      - 8000:8000
-    image: app:django
-    container_name: django_container
-    command: python3 manage.py runserver 0.0.0.0:8000
+      - "8000:8000"
+    image: app1:django1
+    container_name: django_container1
+    command: sh -c "python3 manage.py makemigrations &&
+                    python3 manage.py migrate &&
+                    python3 manage.py runserver 0.0.0.0:8000"
