@@ -5,12 +5,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 
-from basic_site.models import Genres, Movies, Rate, WishList
+from basic_site.models import Genres, Movies, Rate, WatchLater
 from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm, RegistrationForm, \
-	LoginForm, AddToWishList
+	LoginForm, AddToWatchLater
 from basic_site.tasks import from_csvfile_to_bd
 
 
+# TODO-5: Refactor views (too long)
 @login_required(login_url='/login_page/')
 def update_user_profile(request):
 	if request.method == 'POST':
@@ -80,7 +81,7 @@ def movie_page_view(request, movie_id):
 
 	rate_form = RateForm(instance=rate_instance)
 	comment_form = CommentForm()
-	wish_list_form = AddToWishList()
+	wish_list_form = AddToWatchLater()
 
 	if request.method == 'POST':
 		if 'comment_submit' in request.POST:
@@ -104,8 +105,15 @@ def movie_page_view(request, movie_id):
 				rate.save()
 				messages.success(request, message='Your rate has been added')
 				return redirect('movie', movie_id=movie_id)
-
-
+		# if movies + user exists else:
+		elif 'watch_later_submit' in request.POST:
+			wish_list_form = AddToWatchLater(request.POST)
+			if wish_list_form.is_valid():
+				form = wish_list_form.save(commit=False)
+				form.user = request.user
+				form.movie = movie
+				form.save()
+				return redirect('movie', movie_id=movie_id)
 
 	recently_view_products = None
 
