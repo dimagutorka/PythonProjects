@@ -1,5 +1,5 @@
-from typing import List, Optional, Annotated
-from ninja import ModelSchema, Schema, FilterSchema, Field
+from typing import List, Optional
+from ninja import ModelSchema, Schema, FilterSchema
 from basic_site.models import Movies, Genres
 from datetime import date
 

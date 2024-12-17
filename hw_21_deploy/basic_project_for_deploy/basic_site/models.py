@@ -86,6 +86,10 @@ class FileCSV(models.Model):
 	csv_filename = models.FileField(upload_to='movie_csv/', blank=True, null=True)
 
 
+class WishList(models.Model):
+	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='wishlist')
+	movie = models.ForeignKey(Movies, on_delete=models.CASCADE, related_name='wishlist')
+	added_at = models.DateTimeField(auto_now_add=True)
 
-
-
+	class Meta:
+		unique_together = ('user', 'movie')

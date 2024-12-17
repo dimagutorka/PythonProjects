@@ -1,17 +1,17 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
-from basic_site.models import Genres, Movies, Rate
-from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm, RegistrationForm, LoginForm
-from basic_site.tasks import from_csvfile_to_bd
 from django.db.models import Avg, Count
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.core.cache import cache
 from django.contrib.auth import login, authenticate, logout
 
+from basic_site.models import Genres, Movies, Rate, WishList
+from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm, RegistrationForm, \
+	LoginForm, AddToWishList
+from basic_site.tasks import from_csvfile_to_bd
 
-@login_required(login_url='no_account')
+
+@login_required(login_url='/login_page/')
 def update_user_profile(request):
 	if request.method == 'POST':
 
@@ -22,18 +22,18 @@ def update_user_profile(request):
 			form_user.save()
 			form_userprofile.save()
 			messages.success(request, 'Your profile has been updated')
-
 			return redirect('home')
 
 	else:
-
 		form_user = UserForm(instance=request.user)
 		form_userprofile = UserProfileForm(instance=request.user.profile)
 
-	return render(request, 'basic_site/update_user.html', {'form_user': form_user,
-	                                                       'form_userprofile': form_userprofile})
+	return render(request, 'basic_site/update_user.html', {
+		'form_user': form_user,
+		'form_userprofile': form_userprofile})
 
 
+@login_required(login_url='/login_page/')
 def create_movie(request):
 	if request.method == 'GET':
 		form = MovieForm()
@@ -41,41 +41,25 @@ def create_movie(request):
 
 	if request.method == 'POST':
 		form = MovieForm(request.POST, request.FILES)
-		a = request.FILES['poster']
-		print(f'Request: {a}')
 
 		if form.is_valid():
 			form.save()
 			messages.success(request, 'Your movie has been created')
-
 			return redirect('home')
 
 		else:
 			return render(request, 'basic_site/movie_creation.html', {"form": form})
 
 
-# @cache_page(60*1)
 def genres_page_view(request):
-	# all_genres = cache.get('genres')
-	#
-	# if all_genres is None:
 	all_genres = Genres.objects.prefetch_related('movies')
-	# 	cache.set('genres', all_genres, timeout=3600)
-	# 	print('hit the db')
-	# else:
-	# 	print('hit the cache')
-
 	num_comments = (Movies.objects.prefetch_related('genres')
 	                .annotate(num_comments=Count('comments'))
 	                .order_by('-num_comments'))
-	the_most_rated_movies = Movies.objects.order_by('-average_rating')[:3]  # CHECK !!!!
 
-	context = {
+	return render(request, 'basic_site/genres_page.html', {
 		'genres': all_genres,
-		'num_comments': num_comments,
-		'the_most_rated_movies': the_most_rated_movies
-	}
-	return render(request, 'basic_site/genres_page.html', context)
+		'num_comments': num_comments})
 
 
 def genre_page_view(request, genre_id):
@@ -93,8 +77,10 @@ def movie_page_view(request, movie_id):
 	comments = movie.comments.select_related('user').all()
 
 	rate_instance = Rate.objects.filter(user=request.user, movie=movie).first()
+
 	rate_form = RateForm(instance=rate_instance)
 	comment_form = CommentForm()
+	wish_list_form = AddToWishList()
 
 	if request.method == 'POST':
 		if 'comment_submit' in request.POST:
@@ -118,6 +104,8 @@ def movie_page_view(request, movie_id):
 				rate.save()
 				messages.success(request, message='Your rate has been added')
 				return redirect('movie', movie_id=movie_id)
+
+
 
 	recently_view_products = None
 
@@ -148,7 +136,7 @@ def movie_page_view(request, movie_id):
 	           'comment_form': comment_form,
 	           'rate_form': rate_form,
 	           "recently_viewed": recently_view_products,
-	           "genres_in_movie": genres_in_movie
+	           "genres_in_movie": genres_in_movie,
 	           }
 
 	return render(request, 'basic_site/movie_page.html', context)
@@ -179,11 +167,11 @@ def create_movie_via_csv(request):
 			result = from_csvfile_to_bd.delay(filename)
 
 			context['task_id'] = result.task_id
-			# return redirect('home')
+	# return redirect('home')
 	else:
 		form = CSVFileForm()
 		context = {"form": form}
-	return render(request, 'basic_site/movie_creation_via_csv.html', context )
+	return render(request, 'basic_site/movie_creation_via_csv.html', context)
 
 
 def registration_view(request):
@@ -232,51 +220,32 @@ def logout_view(request):
 	return redirect('home')
 
 
+# TODO-4: Add movies you can like (think about ideas how it could be implemented)
 def home(request):
-	username = 'Guest'
-	if 'username' in request.session:
-		username = request.session['username']
-	return render(request, 'basic_site/home.html', {'username': username})
+	username = request.session['username'] if 'username' in request.session else 'Guest'
+
+	movies = Movies.objects.all()
+	the_most_discussed_movies = movies.annotate(num_comments=Count('comments')).order_by('-num_comments')[:5]
+	the_most_rated_movies = movies.order_by('-average_rating')[:5]
+	recently_released = movies.order_by('-release_date')[:5]
+
+	return render(request, 'basic_site/home.html', {
+		'username': username,
+		'the_most_discussed_movies': the_most_discussed_movies,
+		'most_rated_movies': the_most_rated_movies,
+		'recently_released': recently_released})
 
 
 @login_required(login_url='/login_page/')
 def profile(request):
-	user_data = User.objects.select_related('profile').get(id=request.user.id)
-	return render(request, 'basic_site/user_profile.html', {'user_data': user_data})
+	user_id = request.user.id
+	user_data = User.objects.select_related('profile').get(id=user_id)
+	user = User.objects.get(id=user_id)
 
-	
-# HW 22 PS This part of code is inactive because I already have full-fledged login/logout system, it's just for HW
+	most_rated = user.rates.all().order_by('-rate')[:3]
+	least_rated = user.rates.all().order_by('rate')[:3]
 
-# def login_page_for_hw(request):
-# 	if request.method == 'POST':
-# 		name = request.POST.get('name')
-# 		age = request.POST.get('age')
-#
-# 		response = redirect('home')
-# 		response.set_cookie('name', name, max_age=30)
-# 		request.session['age'] = age
-#
-# 		return response
-#
-# 	return render(request, 'basic_site/login_page.html')
-#
-#
-# def login_page_for_hw(request):
-# 	response = redirect('home')
-# 	response.delete_cookie('name')
-# 	request.session.flush()
-# 	return response
-
-#
-# def home(request):
-#
-# 	username = request.COOKIES.get('name')
-# 	age = request.session.get('age')
-#
-# 	if not username or not age:
-# 		return redirect('login')
-#
-# 	response = HttpResponse(f'Hello, {username}! you\'re age is {age}')
-# 	response.set_cookie('name', username, max_age=30)
-#
-# 	return response
+	return render(request, 'basic_site/user_profile.html', {
+		'user_data': user_data,
+		'most_rated': most_rated,
+		'least_rated': least_rated})

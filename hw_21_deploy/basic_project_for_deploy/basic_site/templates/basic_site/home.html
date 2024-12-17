@@ -4,6 +4,7 @@
 {% block content %}
     
     <h1>Hello {{ username }}</h1>
+    
 {% if messages %}
     <ul class="messages">
         {% for message in messages %}
@@ -12,11 +13,26 @@
     </ul>
 {% endif %}
     
-    {% for i in  avg_rating %}
-    <p>{{ i.title }} {{ i.avg_rating }}</p>
-{% endfor %}
+    
+    <h2> The most rated movies:</h2>
+    {% for i in most_rated_movies %}
+        <li>{{ i.title }} - {{ i.average_rating }}/10</li>
+    {% endfor %}
     
     
+     <h2> The most discussed movies:</h2>
+    {% for i in the_most_discussed_movies %}
+        <li>{{ i.title }}: has {{ i.num_comments }} comments </li>
+    {% endfor %}
+    
+        
+     <h2> Recently released:</h2>
+    {% for i in recently_released %}
+        <li>{{ i.title }} was released on {{ i.release_date }} </li>
+    {% endfor %}
+
+    
+
 {% endblock %}
 
 

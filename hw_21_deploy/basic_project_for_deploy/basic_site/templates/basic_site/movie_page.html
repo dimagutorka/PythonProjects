@@ -23,8 +23,14 @@
         </ul>
 
         <img src="{{ movie.poster }}" alt="{{ movie.title }} Poster">
+       
     </div>
 
+     <form action="{% url 'movie' movie.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" name="wish_list_submit"> Add to wishlist</button>
+     </form>
+    
 
     <div>
         <form action="{% url 'movie' movie.id %}" enctype="multipart/form-data" method="POST">
