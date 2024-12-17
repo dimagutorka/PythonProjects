@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "graph.gl": "^1.0.0"
+  }
+}
