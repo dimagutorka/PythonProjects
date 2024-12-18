@@ -5,12 +5,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 
-from basic_site.models import Genres, Movies, Rate, WatchLater
-from basic_site.forms import UserProfileForm, UserForm, MovieForm, CommentForm, RateForm, CSVFileForm, RegistrationForm, \
-	LoginForm, AddToWatchLater
+from basic_site.models import Genres, Movies, Rate, WatchLater, FriendsList
+from basic_site.forms import (UserProfileForm, UserForm, MovieForm, CommentForm,
+                              RateForm, CSVFileForm, RegistrationForm, LoginForm, AddToWatchLater, AddFriend)
 from basic_site.tasks import from_csvfile_to_bd
 
 
+# TODO-7: Add validation in forms form unathorized user who click rate/watch latter buttons
+# TODO-6: add field avatar + last_updated/created to comment section on a movie page
 # TODO-5: Refactor views (too long)
 @login_required(login_url='/login_page/')
 def update_user_profile(request):
@@ -71,17 +73,23 @@ def genre_page_view(request, genre_id):
 	return render(request, 'basic_site/genre_page.html', context)
 
 
+# TODO-9: Make users' profiles which post comments active Other users can
+#  click on their avatar/nickname and go to their profile
 def movie_page_view(request, movie_id):
+	user = request.user
+	context = {}
+
 	movie = get_object_or_404(Movies, pk=movie_id)
 	avg_movie_rate = movie.rates.all().aggregate(Avg('rate'))['rate__avg']
 	genres_in_movie = movie.genres.all()
 	comments = movie.comments.select_related('user').all()
 
-	rate_instance = Rate.objects.filter(user=request.user, movie=movie).first()
+	if user.is_authenticated:
+		rate_instance = Rate.objects.filter(user=user, movie=movie).first()
+		rate_form = RateForm(instance=rate_instance)
+		context['rate_form'] = rate_form
 
-	rate_form = RateForm(instance=rate_instance)
 	comment_form = CommentForm()
-	wish_list_form = AddToWatchLater()
 
 	if request.method == 'POST':
 		if 'comment_submit' in request.POST:
@@ -89,28 +97,29 @@ def movie_page_view(request, movie_id):
 
 			if comment_form.is_valid():
 				comment = comment_form.save(commit=False)
-				comment.user = request.user
+				comment.user = user
 				comment.movie = movie
 				comment.save()
 				messages.success(request, message='Your comment has been added')
 				return redirect('movie', movie_id=movie_id)
 
-		elif 'rate_submit' in request.POST:
+		elif 'rate_submit' in request.POST and user.is_authenticated:
 			rate_form = RateForm(request.POST, instance=rate_instance)
-
+			context['rate_form'] = rate_form
 			if rate_form.is_valid():
 				rate = rate_form.save(commit=False)
-				rate.user = request.user
+				rate.user = user
 				rate.movie = movie
 				rate.save()
 				messages.success(request, message='Your rate has been added')
 				return redirect('movie', movie_id=movie_id)
+
 		# if movies + user exists else:
 		elif 'watch_later_submit' in request.POST:
 			wish_list_form = AddToWatchLater(request.POST)
 			if wish_list_form.is_valid():
 				form = wish_list_form.save(commit=False)
-				form.user = request.user
+				form.user = user
 				form.movie = movie
 				form.save()
 				return redirect('movie', movie_id=movie_id)
@@ -138,14 +147,12 @@ def movie_page_view(request, movie_id):
 
 	request.session.modified = True
 
-	context = {'movie': movie,
-	           'comments': comments,
-	           'avg_movie_rate': avg_movie_rate,
-	           'comment_form': comment_form,
-	           'rate_form': rate_form,
-	           "recently_viewed": recently_view_products,
-	           "genres_in_movie": genres_in_movie,
-	           }
+	context['movie'] = movie
+	context['comments'] = comments
+	context['avg_movie_rate'] = avg_movie_rate
+	context['comment_form'] = comment_form
+	context['recently_viewed'] = recently_view_products
+	context['genres_in_movie'] = genres_in_movie
 
 	return render(request, 'basic_site/movie_page.html', context)
 
@@ -245,15 +252,30 @@ def home(request):
 
 
 @login_required(login_url='/login_page/')
-def profile(request):
-	user_id = request.user.id
-	user_data = User.objects.select_related('profile').get(id=user_id)
-	user = User.objects.get(id=user_id)
+def profile(request, user_id):
+	request_user_id = request.user.id
+	user = User.objects.get(id=request_user_id)
+	friend_ids = FriendsList.objects.values_list('friend_id', flat=True).filter(user=user)
 
+	user_data = User.objects.select_related('profile').get(id=request_user_id)
 	most_rated = user.rates.all().order_by('-rate')[:3]
 	least_rated = user.rates.all().order_by('rate')[:3]
+
+	if request_user_id != user_id and user_id not in friend_ids:
+		friend = User.objects.get(id=user_id)
+		if request.method == 'POST':
+			user_fried_form = AddFriend(request.POST)
+			if user_fried_form.is_valid():
+				form = user_fried_form.save(commit=False)
+				form.user = user
+				form.friend = friend
+				form.save()
+				return redirect('profile', user_id=user_id)
 
 	return render(request, 'basic_site/user_profile.html', {
 		'user_data': user_data,
 		'most_rated': most_rated,
-		'least_rated': least_rated})
+		'least_rated': least_rated,
+		'user_id': user_id,
+		'friend_ids': friend_ids,
+	'request_user_id': request_user_id})

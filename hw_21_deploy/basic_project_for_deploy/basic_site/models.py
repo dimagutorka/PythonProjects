@@ -2,6 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+# TODO-7: let users to add another users to friend list
+"""
+1. Three categories of preferences:
+- not authorized
+- authorized but users are not friends
+- authorized and users are friends
+2. Befriend button
+"""
+
+
 class MovieManager(models.Manager):
 	def num_comments(self, num_comments):
 		return self.raw(""
@@ -93,3 +103,12 @@ class WatchLater(models.Model):
 
 	class Meta:
 		unique_together = ('user', 'movie')
+
+
+class FriendsList(models.Model):
+	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mainuser')
+	friend = models.ForeignKey(User, on_delete=models.CASCADE, related_name='friends')
+
+	class Meta:
+		unique_together = ('user', 'friend')
+

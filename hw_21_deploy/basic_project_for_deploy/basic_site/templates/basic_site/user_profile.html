@@ -2,30 +2,46 @@
 {% load static %}
 
 {% block content %}
-    
-    
+
+
     <div>
-    {% if user.is_authenticated %}
-        <h1>Profile: {{ user_data.username }}</h1>
-        <img src="{% static 'avatars/iScreen_Shoter_-_20241207133123664.jpg' %}" alt="" width="300" height="300">
-        <p>First name: {{ user_data.first_name }}</p>
-        <p>Last name: {{ user_data.last_name }}</p>
-        <p>Age: {{ user_data.profile.age }}</p>
-        <p>Biography: {{ user_data.profile.bio }}</p>
-        <p>Email: {{ user_data.email }}</p>
-        
-        <h1>Your most rate movies</h1>
-        {% for i in most_rated %}
-            <p>{{ i.rate }}</p>
-        {% endfor %}
-        
+        {% if user.is_authenticated %}
+            <h1>Profile: {{ user_data.username }}</h1>
+            <img src="{% static 'avatars/iScreen_Shoter_-_20241207133123664.jpg' %}" alt="" width="300" height="300">
+            <p>First name: {{ user_data.first_name }}</p>
+            <p>Last name: {{ user_data.last_name }}</p>
+            <p>Age: {{ user_data.profile.age }}</p>
+            <p>Biography: {{ user_data.profile.bio }}</p>
+            <p>Email: {{ user_data.email }}</p>
+
+            <h1>Your most rate movies</h1>
+            {% for i in most_rated %}
+                <p>{{ i.rate }}</p>
+            {% endfor %}
+
+
+            <h1>Your least rated movies</h1>
+            {% for i in least_rated %}
+                <p>{{ i.rate }}</p>
+            {% endfor %}
+
+        {% endif %}
+
+
+        {% if request_user_id != user_id %}
+            {% if user_id  in friend_ids %}
+                <form action="{% url 'profile' user_id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" name="" value="Delete friend">
+                </form>
                 
-        <h1>Your least rated movies</h1>
-        {% for i in least_rated %}
-            <p>{{ i.rate }}</p>
-        {% endfor %}
-        
-    {% endif %}
-    
+            {% else %}
+                <form action="{% url 'profile' user_id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" name="" value="Add friend">
+                </form>
+            {% endif %}
+        {% endif %}
+
     </div>
 {% endblock %}

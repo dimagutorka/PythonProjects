@@ -44,12 +44,14 @@
         {% endfor %}
     </div>
 
-
+    
+    {% if user.is_authenticated %}
     <form action="{% url 'movie' movie.id %}" method="POST">
         {% csrf_token %}
         {{ rate_form }}
         <button type="submit" name="rate_submit"> Submit Rating</button>
     </form>
+    {% endif %}
 
 
     <h2>Recently viewed</h2>
@@ -57,7 +59,6 @@
     <div class="container">
         {% for movie in recently_viewed %}
             <p>{{ movie.title }}</p>
-            {#<img src="{% url 'movie' movie.id %}" alt="">#}
         {% endfor %}
     </div>
 

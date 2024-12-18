@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
 	path('home/', home, name='home'),
-	path('profile/', update_user_profile, name='user_profile_form'),
+	# path('profile/', update_user_profile, name='user_profile_form'),
 	path('genres/', genres_page_view, name='genres'),
 	path('genre/<int:genre_id>/', genre_page_view, name='genre'),
 	path('movie/<int:movie_id>', movie_page_view, name='movie'),
@@ -15,7 +15,7 @@ urlpatterns = [
 	path('logout/', logout_view, name='logout'),
 	path('filters/', some_filters, name='filter'),
 	path('create_movie_via_csv/', create_movie_via_csv, name='create_movie_via_csv'),
-	path('profile', profile, name='profile'),
+	path('profile/<int:user_id>/', profile, name='profile'),
 
 
 ]
