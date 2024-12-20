@@ -7,7 +7,7 @@ from django.contrib.auth import login, authenticate, logout
 
 from basic_site.models import Genres, Movies, Rate, WatchLater, FriendsList
 from basic_site.forms import (UserProfileForm, UserForm, MovieForm, CommentForm,
-                              RateForm, CSVFileForm, RegistrationForm, LoginForm, AddToWatchLater, AddFriend)
+                              RateForm, CSVFileForm, RegistrationForm, LoginForm, AddToWatchLater, AddFriend, AcceptFriend)
 from basic_site.tasks import from_csvfile_to_bd
 
 
@@ -257,20 +257,28 @@ def profile(request, user_id):
 	user = User.objects.get(id=request_user_id)
 	friend_ids = FriendsList.objects.values_list('friend_id', flat=True).filter(user=user)
 
+	friend_requests = User.objects.filter(id__in=friend_ids)
+
+
 	user_data = User.objects.select_related('profile').get(id=request_user_id)
 	most_rated = user.rates.all().order_by('-rate')[:3]
 	least_rated = user.rates.all().order_by('rate')[:3]
 
-	if request_user_id != user_id and user_id not in friend_ids:
+
+	# if request_user_id != user_id and user_id not in friend_ids:
+	# 	friend = User.objects.get(id=user_id)
+	if request.method == 'POST':
+		#try to check via request.POST all the friend requests + check how to debug
+
 		friend = User.objects.get(id=user_id)
-		if request.method == 'POST':
-			user_fried_form = AddFriend(request.POST)
-			if user_fried_form.is_valid():
-				form = user_fried_form.save(commit=False)
-				form.user = user
-				form.friend = friend
-				form.save()
-				return redirect('profile', user_id=user_id)
+		user_fried_form = AddFriend(request.POST)
+		if user_fried_form.is_valid():
+			form = user_fried_form.save(commit=False)
+			form.user = user
+			form.friend = friend
+			form.save()
+			return redirect('profile', user_id=user_id)
+
 
 	return render(request, 'basic_site/user_profile.html', {
 		'user_data': user_data,
@@ -278,4 +286,5 @@ def profile(request, user_id):
 		'least_rated': least_rated,
 		'user_id': user_id,
 		'friend_ids': friend_ids,
-	'request_user_id': request_user_id})
+		'request_user_id': request_user_id,
+	"friend_requests": friend_requests})
