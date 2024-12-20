@@ -1,0 +1,3 @@
+psycopg2-binary==2.9.10
+mysqlclient==2.2.6
+Django==5.0.7

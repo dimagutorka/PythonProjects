@@ -1,17 +1,55 @@
-name: docker-projects
 services:
+  mysql:
+    image: mysql
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_DATABASE: mysql_db
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: mysql_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - django_network
+
+
   postgres:
     image: postgres
     container_name: postgres-container
-    ports:
-      - "5432:5432"
+    restart: always
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-    restart: unless-stopped
+    ports:
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - django_network
+
+
+  web:
+    build: .
+    image: app-image
+    container_name: app-container
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - mysql
+    volumes:
+      - .:/app
+    command: /app/entrypoint.sh
+    networks:
+      - django_network
 
 volumes:
   postgres_data:
+  mysql_data:
+
+networks:
+  django_network:

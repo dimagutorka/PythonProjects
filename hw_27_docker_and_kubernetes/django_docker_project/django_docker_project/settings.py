@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "docker_app"
 ]
 
 MIDDLEWARE = [
@@ -73,16 +74,30 @@ WSGI_APPLICATION = "django_docker_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "postgres",
         "USER": "postgres",
         "PASSWORD": "postgres",
-        "HOST": "localhost",
+        "HOST": "postgres",
         "PORT": "5432",
-    }
+    },
+    'additional': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysql_db',
+        'USER': 'mysql_user',
+        'PASSWORD': 'mysql_password',
+        'HOST': 'mysql',
+        'PORT': 3306,
+        "CONN_MAX_AGE": 600,
+    },
 }
+
+
+DATABASE_ROUTERS = ['django_docker_project.db_router.MySQLRouter']
+
 
 
 # Password validation
