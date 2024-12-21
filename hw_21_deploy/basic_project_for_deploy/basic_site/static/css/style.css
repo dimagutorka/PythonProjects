@@ -1,31 +1,38 @@
-h1{
-    text-align: center;
+.navbar-nav .nav-link {
+    margin-right: 15px;
+    font-size: 1.1rem;
 }
 
-.navbar ul{
-    list-style-type: none;
-    background-color: #404040;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
-.navbar a{
 
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
+
+
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
 }
 
-.navbar a:hover{
-    background-color: #1a1a1a;
-
-
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
 }
 
-.navbar li{
-    float: left;
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
 
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
 }

@@ -70,10 +70,12 @@ class AddToWatchLater(forms.ModelForm):
 		model = WatchLater
 		fields = []
 
+
 class AddFriend(forms.ModelForm):
 	class Meta:
 		model = FriendsList
 		fields = []
+
 
 class AcceptFriend(forms.ModelForm):
 	class Meta:

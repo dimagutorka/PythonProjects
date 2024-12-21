@@ -57,9 +57,14 @@ class Command(BaseCommand):
 
 	def load_genres(self):
 		r = requests.get(url=self.url_to_genres, headers=self.headers).json()['genres']
-
 		for i in r:
 			genre = Genres.objects.create(name=i['name'])
 			genre.save()
 
 		self.stdout.write(self.style.SUCCESS('Genres loaded successfully'))
+
+
+	def load_users(self):
+
+
+		self.stdout.write(self.style.SUCCESS('users loaded successfully'))

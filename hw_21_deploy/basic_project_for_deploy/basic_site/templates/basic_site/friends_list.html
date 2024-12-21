@@ -1,0 +1,31 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+    
+
+    {% for friend_request in friend_requests %}
+        <p>{{ friend_request.username }}</p>
+        {% if friend_request.is_active %}
+            <form action="{% url 'friends_list' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="user_id" value="{{ friend_request.id }}">
+                <input type="submit" name="accept_friend" value="Approve">
+                <input type="submit" name="decline_friend" value="Decline">
+            </form>
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
