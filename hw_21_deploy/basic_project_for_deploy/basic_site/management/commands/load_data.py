@@ -63,8 +63,5 @@ class Command(BaseCommand):
 
 		self.stdout.write(self.style.SUCCESS('Genres loaded successfully'))
 
-
 	def load_users(self):
-
-
 		self.stdout.write(self.style.SUCCESS('users loaded successfully'))

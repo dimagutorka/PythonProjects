@@ -65,6 +65,7 @@ class LoginForm(AuthenticationForm):
 		fields = ['username', 'password']
 
 
+# TODO-13: DELETE THE FORMS, I GUESS ITS REDUNDANT
 class AddToWatchLater(forms.ModelForm):
 	class Meta:
 		model = WatchLater

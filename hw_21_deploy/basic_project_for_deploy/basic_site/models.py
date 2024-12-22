@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 2. Befriend button
 """
 
-
+# TODO-11: Create manager for most used filter-query
 class MovieManager(models.Manager):
 	def num_comments(self, num_comments):
 		return self.raw(""
@@ -97,8 +97,8 @@ class FileCSV(models.Model):
 
 
 class WatchLater(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='wishlist')
-	movie = models.ForeignKey(Movies, on_delete=models.CASCADE, related_name='wishlist')
+	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='watchlater')
+	movie = models.ForeignKey(Movies, on_delete=models.CASCADE, related_name='watchlater')
 	added_at = models.DateTimeField(auto_now_add=True)
 
 	class Meta:
@@ -113,4 +113,20 @@ class FriendsList(models.Model):
 
 	class Meta:
 		unique_together = ('user', 'friend')
+
+# TODO-12: new model
+"""
+class MoviesPlaylist
+	user = FK
+	movie = FK
+	name = unique
+	likes = models.PositiveIntegerField(default=0)
+	dislikes = models.PositiveIntegerField(default=0)
+	
+	class Meta:
+		unique_together = ('user', 'movie')
+"""
+
+
+# TODO-13: Add opportunity to add a movie in a playlist + create a new one on a movie-page
 
