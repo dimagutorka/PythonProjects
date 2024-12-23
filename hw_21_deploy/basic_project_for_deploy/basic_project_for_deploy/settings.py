@@ -1,12 +1,14 @@
 import os
 import sys
+
 from pathlib import Path
-sys.path.append('/Users/cblpok/DjangoProjects/BaseSite/PythonProjects/hw_21_deploy')
-from gmail_apppass_for_django import app_pass
+from dotenv import load_dotenv, dotenv_values
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-fmbnbh2@5$ii_vntqp#0(vdtw9q0hw(7)g#c@%x%n6_yn118y!'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = True
 ALLOWED_HOSTS = []
@@ -18,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'basic_site',
+    'core',
     "debug_toolbar",
     'celery_progress',
     'django_celery_results'
@@ -33,7 +35,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-    "basic_site.middleware.CacheMoviesListMiddleWare",
+    "core.middleware.CacheMoviesListMiddleWare",
 
 ]
 
@@ -58,8 +60,10 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -97,8 +101,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'basic_site/static',
-    BASE_DIR / 'media/',
+    BASE_DIR / 'basic_project_for_deploy/core/static',
+    # BASE_DIR / 'media/',
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -114,7 +118,6 @@ INTERNAL_IPS = [
 ]
 
 # CELERY CONFIGURATION
-
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
@@ -123,10 +126,9 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 
-
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'dhutorka@gmail.com'
-EMAIL_HOST_PASSWORD = app_pass
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('APP_PASS')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

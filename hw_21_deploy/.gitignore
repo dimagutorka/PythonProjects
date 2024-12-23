@@ -1,2 +1,4 @@
 /gmail_apppass_for_django.py
 /draft.py
+__pycache__
+.env
