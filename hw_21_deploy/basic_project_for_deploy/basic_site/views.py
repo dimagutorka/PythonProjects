@@ -320,7 +320,7 @@ def friends_list(request):
 	return render(request, 'basic_site/friends_list.html', {'friend_requests': friend_requests})
 
 
-
+# TODO-20: Movies status - to watch / watching / watched / on hold / backlog
 
 # ПОПРОБОВАТЬ ПЕРЕСВЯЗАТЬ ВСЕ ЧЕРЕЗ ТАБЛИЦУ ЮЗЕРОВ
 # usr = User.objects.get(id=1) | usr.friends
